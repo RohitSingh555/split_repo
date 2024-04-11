@@ -1,0 +1,10 @@
+.Section1,
+.Section6 {
+    background-image: url('../../public/sec-1-bg.png');
+}
+
+.sectionContainer1,
+.sectionContainer6 {
+    background-color: white;
+    border-radius: 20px;
+}

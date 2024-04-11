@@ -10,7 +10,7 @@ const Footer = () => {
       <div className="container flex flex-col lg:flex-row justify-between py-12 mx-auto space-y-32 lg:space-y-0">
         <div className="lg:w-64">
           <a rel="noopener noreferrer" href="#" className="flex  pb-5">
-            <img src="../../public/SplitStay.svg" className="h-10" alt="SplitStay Logo"></img>
+            <img src="../../public/SplitStay.png" className="h-10" alt="SplitStay Logo"></img>
           </a>
           <p className="max-w-sm text-gray-500 lg:max-w-none">Simple innate summer fat appear basket his desire joy.</p>
           <div className="flex justify-start space-x-3 mt-4 text-IconColor text-2xl">

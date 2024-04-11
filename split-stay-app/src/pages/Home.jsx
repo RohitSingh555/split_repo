@@ -1,6 +1,5 @@
 // Home.jsx
 import React from 'react';
-import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
 import SectionText from '../components/SectionText';
 import { HomeButtons_Solid } from '../components/HomeButtons';
@@ -8,13 +7,11 @@ import SectionContainer from '../components/SectionContainer';
 import SectionImage from '../components/SectionImage';
 import '../styles/home.css'
 import Steps from '../components/Steps';
-import Footer from '../components/Footer';
 import TestimonialContainer from '../components/TestimonialContainer';
 
 const Home = () => {
   return (
     <>
-      <Navbar />
       <HeroSection />
       <div className='Section1 md:p-28 p-3'>
         <div className=' sectionContainer1 md:p-12 p-5'>
@@ -111,7 +108,6 @@ const Home = () => {
 
 
 {/* Footer */}
-<Footer/>
     </>
   );
 }

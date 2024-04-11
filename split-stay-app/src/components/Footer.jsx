@@ -1,7 +1,8 @@
 import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook, faTwitter, faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { faFacebook, faTwitter, faInstagram, faFacebookMessenger, } from "@fortawesome/free-brands-svg-icons";
 import { HomeButtons_Solid } from './HomeButtons';
+import { faInfinity } from '@fortawesome/free-solid-svg-icons';
 
 const Footer = () => {
   return (
@@ -22,6 +23,12 @@ const Footer = () => {
             </a>
             <a rel="noopener noreferrer" href="#" title="Instagram" className="flex items-center ">
               <FontAwesomeIcon icon={faInstagram} />
+            </a>
+            <a rel="noopener noreferrer" href="#" title="Instagram" className="flex items-center ">
+            <FontAwesomeIcon icon={faFacebookMessenger} />
+            </a>
+            <a rel="noopener noreferrer" href="#" title="Instagram" className="flex items-center ">
+            <FontAwesomeIcon icon={faInfinity} />
             </a>
           </div>
         </div>

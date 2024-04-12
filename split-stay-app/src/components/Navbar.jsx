@@ -8,7 +8,6 @@ const Navbar = () => {
   const toggleNavbar = () => {
     setIsNavbarOpen(!isNavbarOpen);
   };
-
   return (
     <nav className="bg-white fixed w-full z-20 top-0 start-0 py-3">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">

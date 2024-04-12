@@ -7,8 +7,6 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Home from './pages/Home.jsx';
-import Navbar from './components/Navbar.jsx';
-import Footer from './components/Footer.jsx';
 import AboutUs from './pages/About.jsx';
 import App from './App.jsx';
 
@@ -23,13 +21,13 @@ const router = createBrowserRouter([
         element: <Home />,
         errorElement: <ErrorPage />,
       },
+      {
+        path: "about",
+            element: <AboutUs />,
+            errorElement: <ErrorPage />,
+      }
     ],
   },
-  {
-    path: "about",
-        element: <AboutUs />,
-        errorElement: <ErrorPage />,
-  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

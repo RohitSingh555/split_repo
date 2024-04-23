@@ -1,4 +1,5 @@
-body, html {
+body,
+html {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -8,14 +9,16 @@ body, html {
 
 .container {
     display: flex;
-    flex-direction: row; /* Default layout for larger screens */
+    flex-direction: row;
+    /* Default layout for larger screens */
     height: 100vh;
 }
 
 .left-panel {
     flex: 1;
     position: relative;
-    overflow: hidden; /* Ensures video does not overflow its container */
+    overflow: hidden;
+    /* Ensures video does not overflow its container */
 }
 
 .hero-video {
@@ -39,15 +42,18 @@ body, html {
     background-color: #fff;
 }
 
-h1, p {
+h1,
+p {
     text-align: center;
-    padding: 0 10px; /* Adds padding to text for smaller screens */
+    padding: 0 10px;
+    /* Adds padding to text for smaller screens */
 }
 
 /* Responsive Design Adjustments */
 @media (max-width: 768px) {
     .container {
-        flex-direction: column; /* Stack elements vertically on smaller screens */
+        flex-direction: column;
+        /* Stack elements vertically on smaller screens */
     }
 
     .hero-video {
@@ -58,19 +64,22 @@ h1, p {
 
 @media (max-width: 480px) {
     h1 {
-        font-size: 20px; /* Reduce font size for smaller screens */
+        font-size: 20px;
+        /* Reduce font size for smaller screens */
     }
 
     p {
         font-size: 16px;
     }
 }
+
 /* Existing styles... */
 
 .social-media a {
     display: inline-block;
     margin-top: 20px;
-    color: #000; /* Adjust color based on your design */
+    color: #000;
+    /* Adjust color based on your design */
     text-decoration: none;
 }
 
@@ -79,5 +88,6 @@ h1, p {
 }
 
 a:hover {
-    color: #007bff; /* Example hover effect */
+    color: #007bff;
+    /* Example hover effect */
 }

@@ -6,3 +6,34 @@
 body {
     font-family: poppins;
 }
+
+.grow li svg {
+    background-color: #005d93;
+    padding: 4px;
+    font-size: 43px;
+    width: 19px;
+    border-radius: 50%;
+    height: 19px;
+    color: white !important;
+    filter: invert(1);
+}
+
+.grow li {
+    padding-bottom: 15px;
+}
+
+input[type="checkbox"] {
+    width: 1em;
+    height: 1rem;
+    accent-color: rgb(238, 159, 14);
+}
+
+
+input[type="checkbox"]::before {
+    content: "";
+    width: 1.4rem;
+    height: 1.4rem;
+    clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+    transform: scale(0);
+    background-color: green;
+}

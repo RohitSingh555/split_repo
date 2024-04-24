@@ -20,7 +20,9 @@ const SignupPage = () => {
             >
               // {/* <img src="/SplitStay.png" className="h-10" alt="SplitStay Logo" /> */}
             {/* </Link> */}
-            <h1 className="text-Primarycolor font-bold text-5xl">Sign Up</h1>
+            <h1 className=" font-bold text-2xl lg:text-4xl">
+              Welcome back! Glad to see you, Again!
+            </h1>
 
             <EmailInput type={"name"} label={"Full Name"} />
             <EmailInput type={"email"} label={"Email Address"} />
@@ -69,21 +71,21 @@ const SignupPage = () => {
                 onClick={() => console.log("Signup clicked")}
               >
                 <img src="/fb.png"></img>
-                Facebook
+                <span className="hidden lg:block">Facebook</span>
               </HomeButtons_Hollow>
               <HomeButtons_Hollow
                 className="py-1 px-4 mt-10 flex justify-around font-medium items-center fw-lighter w-36 "
                 onClick={() => console.log("Signup clicked")}
               >
                 <img src="/apple.png"></img>
-                Apple
+                <span className="hidden lg:block">Apple</span>
               </HomeButtons_Hollow>
               <HomeButtons_Hollow
                 className="py-1 px-4 mt-10 fw-lighter font-medium flex justify-around w-36"
                 onClick={() => console.log("Signup clicked")}
               >
                 <img src="/google.png"></img>
-                Google
+                <span className="hidden lg:block">Google</span>
               </HomeButtons_Hollow>
             </div>
           </div>

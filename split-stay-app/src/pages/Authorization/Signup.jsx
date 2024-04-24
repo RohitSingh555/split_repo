@@ -6,12 +6,6 @@ import {
   HomeButtons_Solid,
   HomeButtons_Hollow,
 } from "../../components/HomeButtons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFacebook,
-  faApple,
-  faGoogle,
-} from "@fortawesome/free-brands-svg-icons";
 import Slides from "../../components/FormComponents/SlideComponent";
 
 const SignupPage = () => {
@@ -71,24 +65,24 @@ const SignupPage = () => {
             </div>
             <div className="flex justify-center gap-4">
               <HomeButtons_Hollow
-                className="py-1 px-1 mt-10 fw-lighter w-40"
+                className="py-1 px-1 mt-10 flex justify-around font-medium items-center fw-lighter w-40"
                 onClick={() => console.log("Signup clicked")}
               >
-                <FontAwesomeIcon icon={faFacebook} className="mr-2" />
+                <img src="/fb.png"></img>
                 Facebook
               </HomeButtons_Hollow>
               <HomeButtons_Hollow
-                className="py-1 px-4 mt-10 fw-lighter w-36 "
+                className="py-1 px-4 mt-10 flex justify-around font-medium items-center fw-lighter w-36 "
                 onClick={() => console.log("Signup clicked")}
               >
-                <FontAwesomeIcon icon={faApple} className="mr-2" />
+                <img src="/apple.png"></img>
                 Apple
               </HomeButtons_Hollow>
               <HomeButtons_Hollow
-                className="py-1 px-4 mt-10 fw-lighter w-36"
+                className="py-1 px-4 mt-10 fw-lighter font-medium flex justify-around w-36"
                 onClick={() => console.log("Signup clicked")}
               >
-                <FontAwesomeIcon icon={faGoogle} className="mr-2" />
+                <img src="/google.png"></img>
                 Google
               </HomeButtons_Hollow>
             </div>
@@ -96,7 +90,7 @@ const SignupPage = () => {
           <div className=" text-center pt-4">
             <p>
               Already have an account?{" "}
-              <Link>
+              <Link to={"/login"}>
                 <span className="text-Primarycolor">Log in now</span>
               </Link>
             </p>

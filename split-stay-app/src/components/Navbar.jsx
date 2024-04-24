@@ -1,5 +1,5 @@
-import { useState } from "react";
 import { HomeButtons_Hollow, HomeButtons_Solid } from "./HomeButtons";
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
@@ -9,9 +9,16 @@ const Navbar = () => {
     setIsNavbarOpen(!isNavbarOpen);
   };
 
+  const closeNavbar = () => {
+    setIsNavbarOpen(false);
+  };
+
   const location = useLocation();
   const isHome = location.pathname === "/";
   const isAbout = location.pathname === "/about";
+  const isLogin = location.pathname === "/login";
+  const isSignup = location.pathname === "/signup";
+  const shouldDisplay = isHome || isAbout || isLogin || isSignup;
 
   return (
     <nav className="bg-white fixed w-full z-20 top-0 start-0 py-3 shadow-md">
@@ -23,9 +30,9 @@ const Navbar = () => {
           <img src="/SplitStay.png" className="h-10" alt="SplitStay Logo" />
         </Link>
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-          {isHome || isAbout ? (
+          {shouldDisplay ? (
             <div className="md:flex gap-5 hidden">
-              <Link to={"/login"}>
+              <Link to={"/login"} onClick={closeNavbar}>
                 <HomeButtons_Hollow
                   className="py-3 px-10"
                   onClick={() => console.log("Signup clicked")}
@@ -33,7 +40,7 @@ const Navbar = () => {
                   Login
                 </HomeButtons_Hollow>
               </Link>
-              <Link to={"/signup"}>
+              <Link to={"/signup"} onClick={closeNavbar}>
                 <HomeButtons_Solid
                   className="py-3 px-10"
                   onClick={() => console.log("Login clicked")}
@@ -90,13 +97,14 @@ const Navbar = () => {
           }`}
           id="navbar-sticky"
         >
-          {isHome || isAbout ? (
-            <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white ">
+          {shouldDisplay ? (
+            <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium  rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white ">
               <li>
                 <Link
                   to="/"
                   className="block py-2 px-3 text-gray-900 bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
                   aria-current="page"
+                  onClick={closeNavbar}
                 >
                   Home
                 </Link>
@@ -105,6 +113,7 @@ const Navbar = () => {
                 <Link
                   to="/about"
                   className="block py-2 px-3 text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+                  onClick={closeNavbar}
                 >
                   About Us
                 </Link>
@@ -113,6 +122,7 @@ const Navbar = () => {
                 <Link
                   to="/pricing"
                   className="block py-2 px-3 text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+                  onClick={closeNavbar}
                 >
                   Pricing
                 </Link>
@@ -121,10 +131,33 @@ const Navbar = () => {
                 <Link
                   to="#"
                   className="block py-2 px-3 text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+                  onClick={closeNavbar}
                 >
                   Contact
                 </Link>
               </li>
+              {isNavbarOpen ? (
+                <div className="flex gap-5">
+                  <Link to={"/login"} onClick={closeNavbar}>
+                    <HomeButtons_Solid
+                      className="border-0 ml-2"
+                      onClick={() => console.log("Signup clicked")}
+                    >
+                      Login
+                    </HomeButtons_Solid>
+                  </Link>
+                  {/* <Link to={"/signup"}>
+                    <HomeButtons_Solid
+                      className="py-3 px-10"
+                      onClick={() => console.log("Login clicked")}
+                    >
+                      Signup
+                    </HomeButtons_Solid>
+                  </Link> */}
+                </div>
+              ) : (
+                <div className="hidden"></div>
+              )}
             </ul>
           ) : (
             <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white ">
@@ -133,6 +166,7 @@ const Navbar = () => {
                   to="/"
                   className="block py-2 px-3 text-gray-900 bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
                   aria-current="page"
+                  onClick={closeNavbar}
                 >
                   Home
                 </Link>
@@ -141,6 +175,7 @@ const Navbar = () => {
                 <Link
                   to="/pricing"
                   className="block py-2 px-3 text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+                  onClick={closeNavbar}
                 >
                   Experience
                 </Link>
@@ -149,6 +184,7 @@ const Navbar = () => {
                 <Link
                   to="/pricing"
                   className="block py-2 px-3 text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+                  onClick={closeNavbar}
                 >
                   Post
                 </Link>
@@ -157,6 +193,7 @@ const Navbar = () => {
                 <Link
                   to="/pricing"
                   className="block py-2 px-3 text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+                  onClick={closeNavbar}
                 >
                   Bookings
                 </Link>

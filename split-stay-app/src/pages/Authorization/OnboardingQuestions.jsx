@@ -4,6 +4,7 @@ import {
   HomeButtons_Hollow,
   HomeButtons_Solid,
 } from "../../components/HomeButtons";
+import { Link } from "react-router-dom";
 
 const OnboardingQuestions = () => {
   const [answers, setAnswers] = useState({
@@ -131,12 +132,14 @@ const OnboardingQuestions = () => {
               >
                 Next
               </HomeButtons_Solid>
-              <HomeButtons_Hollow
-                className="py-1 px-4 mt-10 fw-lighter w-56"
-                onClick={() => console.log("Signup clicked")}
-              >
-                Skip
-              </HomeButtons_Hollow>
+              <Link to={"/home"}>
+                <HomeButtons_Hollow
+                  className="py-1 px-4 mt-10 fw-lighter w-56"
+                  onClick={() => console.log("Signup clicked")}
+                >
+                  Skip
+                </HomeButtons_Hollow>
+              </Link>
             </div>
           </div>
         }

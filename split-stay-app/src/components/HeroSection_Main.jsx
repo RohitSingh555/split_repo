@@ -1,16 +1,15 @@
-import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { HomeButtons_Hollow, HomeButtons_Solid } from "./HomeButtons";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 const HeroSection_Main = () => {
   return (
-    <section className="dark:bg-gray-900 pb-2 bg-HeroSectionBackgroundColor pt-7 md:pt-24">
+    <section className="dark:bg-gray-900 pb-2 bg-LandingPageBg pt-7 md:pt-24">
       <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
-        {/* Image at the top in mobile view */}
         <div className="lg:hidden lg:col-span-7 md:pt-24 pt-10 lg:flex justify-end">
           <img src="../../hero.png" alt="mockup" />
         </div>
 
-        {/* Content */}
         <div className="mr-auto place-self-top lg:col-span-5 pt-0 md:pt-24 ">
           <h1 className="max-w-3xl mb-4 text-4xl font-bold tracking-tight leading-none md:text-4xl xl:text-5xl dark:text-white">
             Discover <span className="text-Primarycolor">amazing</span> stays{" "}
@@ -34,6 +33,23 @@ const HeroSection_Main = () => {
             >
               Propose an Experience
             </HomeButtons_Hollow>
+          </div>
+          <div className="flex justify-between shadow-md mt-5 lg:mt-20 p-4 rounded-md">
+            <div className="">
+              <p className=" text-black-50  text-sm">Location</p>
+              <h4 className="font-bold">Anywhere</h4>
+            </div>
+            <div className="">
+              <p className=" text-black-50  text-sm">When</p>
+              <h4 className="font-bold">Anytime</h4>
+            </div>
+            <div className="">
+              <p className=" text-black-50  text-sm">Who</p>
+              <h4 className="font-bold">1 Guest</h4>
+            </div>
+            <div className="text-xl bg-Primarycolor px-5 py-3 rounded-full">
+              <FontAwesomeIcon icon={faSearch} />
+            </div>
           </div>
         </div>
 

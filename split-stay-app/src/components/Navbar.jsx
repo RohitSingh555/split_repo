@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { HomeButtons_Hollow, HomeButtons_Solid } from "./HomeButtons";
 import { Link, useLocation } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch, faBell, faUser } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
@@ -15,7 +13,7 @@ const Navbar = () => {
   const isHome = location.pathname === "/";
 
   return (
-    <nav className="bg-white fixed w-full z-20 top-0 start-0 py-3">
+    <nav className="bg-white fixed w-full z-20 top-0 start-0 py-3 shadow-md">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <Link
           to="/"
@@ -44,17 +42,17 @@ const Navbar = () => {
               </Link>
             </div>
           ) : (
-            <div className="md:flex items-end gap-5 hidden">
+            <div className="md:flex items-center gap-5 hidden">
               <Link className="text-4xl">
-                <FontAwesomeIcon icon={faSearch} />
+                <img src="/search.png"></img>
               </Link>
               <Link className="text-4xl">
-                <FontAwesomeIcon icon={faBell} />
+                <img src="/bell.png"></img>
               </Link>
               <Link className="flex items-end gap-4">
-                <FontAwesomeIcon className="text-4xl" icon={faUser} />
+                <img src="/userimg.png"></img>
                 <div>
-                  <h4>Cody Fisher</h4>
+                  <h4 className="font-bold">Cody Fisher</h4>
                   <h5>kenzi.lawson@example.com</h5>
                 </div>
               </Link>

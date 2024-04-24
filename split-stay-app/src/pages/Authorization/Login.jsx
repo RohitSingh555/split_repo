@@ -53,12 +53,14 @@ const LoginPage = () => {
                 </Link>
               </div>
             </div>
-            <HomeButtons_Solid
-              className=" mt-16 px-10 w-full"
-              onClick={() => console.log("Login clicked")}
-            >
-              Login
-            </HomeButtons_Solid>
+            <Link to={"/preferences"}>
+              <HomeButtons_Solid
+                className=" mt-16 px-10 w-full"
+                onClick={() => console.log("Login clicked")}
+              >
+                Login
+              </HomeButtons_Solid>
+            </Link>
             <div className="mt-8 flex items-center justify-between">
               <span className="border-b w-1/5 lg:w-1/4"></span>
               <Link to="#" className="text-xs text-center text-gray-500">

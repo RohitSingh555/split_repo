@@ -1,137 +1,284 @@
 // Home.jsx
-import React from "react";
 import SectionText from "../components/SectionText";
-import {
-  HomeButtons_Solid,
-  HomeButtons_Hollow,
-} from "../components/HomeButtons";
+import { HomeButtons_Solid } from "../components/HomeButtons";
 import SectionContainer from "../components/SectionContainer";
 import SectionImage from "../components/SectionImage";
 import "../styles/home.css";
 import Steps from "../components/Steps";
 import TestimonialContainer from "../components/TestimonialContainer";
 import HeroSection_Main from "../components/HeroSection_Main";
+import Heading from "../components/Heading";
+import UserCard from "../components/UserComponents/UserCard";
 
 const MainPage = () => {
   return (
     <>
-      <HeroSection_Main />
-      <div className="Section1 md:p-28 p-3">
-        <div className=" sectionContainer1 md:p-12 p-5">
-          <SectionContainer className="flex flex-col sm:flex-row gap-4 sm:gap-8">
-            <SectionText
-              title="Discover amazing stays with splitstay"
-              description="SplitStay is a trusted marketplace and social network for shared lodging 1,480,086 shared lodging options around the world are waiting for you!. "
-            >
-              <HomeButtons_Solid
-                className="py-4 px-14"
-                onClick={() => console.log("Login clicked")}
-              >
-                Browse Experiences
-              </HomeButtons_Solid>
-              <HomeButtons_Hollow
-                className="py-1 px-1 mt-10 fw-lighter w-40"
-                onClick={() => console.log("Signup clicked")}
-              >
-                Propose an Experience
-              </HomeButtons_Hollow>
-            </SectionText>
-            <SectionImage
-              imagePosition="right"
-              imageSrc="/sec-1.png" // Replace with your image URL
-            />
-          </SectionContainer>
+      <div className="container max-w-screen-xl m-auto">
+        <HeroSection_Main className="bg-LandingPageBg" />
+
+        <div className=" Section2 px-5 bg-LandingPageBg">
+          <Heading className="text-4xl pb-12">Join the experience</Heading>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 ">
+            <div className="relative col-span-2 lg:col-span-1">
+              <img
+                src="/barcelona.png"
+                alt="Placeholder"
+                className="w-full h-full object-cover rounded-md"
+              ></img>
+              <div className="absolute inset-0 flex items-end justify-start text-white pl-4 pb-4 opacity-100 hover:opacity-0 transition-opacity">
+                <div className=" bg-gray-300 bg-Overlay items-center rounded-2xl flex px-2 py-1">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-4 w-4 text-gray-500 mr-1"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 4c3.865 0 7 3.134 7 7 0 4.062-7 13-7 13S5 15.062 5 11c0-3.866 3.135-7 7-7zm0 10a2 2 0 100-4 2 2 0 000 4z"
+                    />
+                  </svg>
+                  <h2 className="text-sm font-normal text-gray-800">
+                    Barcelona
+                  </h2>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex flex-col justify-between hidden md:block col-span-2 lg:col-span-1">
+              <div className="relative mb-4">
+                <img
+                  src="/bali.png"
+                  alt="Placeholder"
+                  className="w-full h-full object-cover rounded-md"
+                ></img>
+                <div className="absolute inset-0 flex items-end justify-start text-white pl-4 pb-4 opacity-100 hover:opacity-0  transition-opacity">
+                  <div className=" items-center bg-gray-300 bg-Overlay items-center rounded-2xl flex px-2 py-1">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-4 w-4 text-gray-500 mr-1"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 4c3.865 0 7 3.134 7 7 0 4.062-7 13-7 13S5 15.062 5 11c0-3.866 3.135-7 7-7zm0 10a2 2 0 100-4 2 2 0 000 4z"
+                      />
+                    </svg>
+                    <h2 className="text-sm font-normal text-gray-800">Bali</h2>
+                  </div>
+                </div>
+              </div>
+              <div className="relative">
+                <img
+                  src="/button.png"
+                  alt="Placeholder"
+                  className="w-full h-full object-cover rounded-md"
+                ></img>
+                <div className="absolute inset-0 flex items-end justify-start text-white pl-4 pb-4 opacity-100 hover:opacity-0  transition-opacity">
+                  <div className=" bg-gray-300 bg-Overlay items-center rounded-2xl flex px-2 py-1">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-4 w-4 text-gray-500 mr-1"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 4c3.865 0 7 3.134 7 7 0 4.062-7 13-7 13S5 15.062 5 11c0-3.866 3.135-7 7-7zm0 10a2 2 0 100-4 2 2 0 000 4z"
+                      />
+                    </svg>
+                    <h2 className="text-sm font-normal text-gray-800">
+                      Button
+                    </h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative col-span-2 lg:col-span-1">
+              <img
+                src="/costarita.png"
+                alt="Placeholder"
+                className="w-full h-full object-cover rounded-md"
+              ></img>
+              <div className="absolute inset-0 flex items-end justify-start text-white pl-4 pb-4 opacity-100 hover:opacity-0  transition-opacity">
+                <div className=" bg-gray-300 bg-Overlay items-center rounded-2xl flex px-2 py-1">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-4 w-4 text-gray-500 mr-1"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 4c3.865 0 7 3.134 7 7 0 4.062-7 13-7 13S5 15.062 5 11c0-3.866 3.135-7 7-7zm0 10a2 2 0 100-4 2 2 0 000 4z"
+                    />
+                  </svg>
+                  <h2 className="text-sm font-normal text-gray-800">
+                    Costa Rita
+                  </h2>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex flex-col justify-between hidden md:block col-span-2 lg:col-span-1">
+              <div className="relative mb-4">
+                <img
+                  src="/switzerland.png"
+                  alt="Placeholder"
+                  className="w-full h-full object-cover rounded-md"
+                ></img>
+                <div className="absolute inset-0 flex items-end justify-start text-white pl-4 pb-4 opacity-100 hover:opacity-0  transition-opacity ">
+                  <div className=" bg-gray-300 bg-Overlay items-center rounded-2xl flex px-2 py-1">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-4 w-4 text-gray-500 mr-1"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 4c3.865 0 7 3.134 7 7 0 4.062-7 13-7 13S5 15.062 5 11c0-3.866 3.135-7 7-7zm0 10a2 2 0 100-4 2 2 0 000 4z"
+                      />
+                    </svg>
+                    <h2 className="text-sm font-normal text-gray-800">
+                      Switzerland
+                    </h2>
+                  </div>
+                </div>
+              </div>
+              <div className="relative ">
+                <img
+                  src="/italy.png"
+                  alt="Placeholder"
+                  className="w-full h-full object-cover rounded-md"
+                  style={{ minHeight: "245px" }}
+                ></img>
+                <div className="absolute inset-0 flex items-end justify-start text-white pl-4 pb-4 opacity-100 hover:opacity-0  transition-opacity">
+                  <div className=" bg-gray-300 bg-Overlay items-center rounded-2xl flex px-2 py-1">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-4 w-4 text-gray-500 mr-1"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 4c3.865 0 7 3.134 7 7 0 4.062-7 13-7 13S5 15.062 5 11c0-3.866 3.135-7 7-7zm0 10a2 2 0 100-4 2 2 0 000 4z"
+                      />
+                    </svg>
+                    <h2 className="text-sm font-normal text-gray-800">Italy</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div className="Section2 md:p-20 p-3">
-        <SectionContainer className="flex gap-10 md:gap-36 sectionContainer2">
-          <SectionImage
-            imagePosition="right"
-            imageSrc="/sec-3.png" // Replace with your image URL
-          />
-          <SectionText
-            subtitle="Matching made easy"
-            title="View and filter by shared interest"
-            description="see like  minded individuals that share you
-        lifestyle, hobbies, and travel preferences."
-          >
-            <HomeButtons_Solid
-              className="py-4 px-14"
-              onClick={() => console.log("Login clicked")}
-            >
-              View local splitters
-            </HomeButtons_Solid>
-          </SectionText>
-        </SectionContainer>
-      </div>
-      <div className="Section3 md:p-20 p-3">
-        <SectionContainer className="flex gap-10 md:gap-36 sectionContainer3 ">
-          <SectionText
-            subtitle="Trust & safety"
-            title="Connect with Peace of mind"
-            description="see like  minded individuals that share you
-        lifestyle, hobbies, and travel preferences."
-          >
-            <HomeButtons_Solid
-              className="py-4 px-14"
-              onClick={() => console.log("Login clicked")}
-            >
-              View local splitters
-            </HomeButtons_Solid>
-          </SectionText>
-          <SectionImage
-            imagePosition="right"
-            imageSrc="/sec-4.png" // Replace with your image URL
-          />
-        </SectionContainer>
-      </div>
-
-      {/* section 4 */}
-      <div className="Section1 md:p-28 p-3 ">
-        <div className=" sectionContainer1 md:p-12 p-5">
-          <SectionContainer className="flex gap-10 md:gap-32 flex-col lg:flex-row">
-            <SectionText
-              title="Let's talk about how it works "
-              description="Turn your reserved lodging into shared savings and explore more for a fraction of the cost."
+        <div className=" Section3 bg-LandingPageBg pt-24 px-5">
+          <Heading className="text-4xl pb-12">Travelers you can trust</Heading>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 px-5">
+            <UserCard
+              imageUrl="/Image-1.png"
+              rating="4.9"
+              name="Gio"
+              age="36"
+              occupation="Product Manager"
+              education="Harvard University"
+              location="Portland, Oregon USA"
               className=""
-            >
+            />
+            <UserCard
+              imageUrl="/Image-2.png"
+              rating="4.9"
+              name="Gio"
+              age="36"
+              occupation="Product Manager"
+              education="Harvard University"
+              location="Portland, Oregon USA"
+              className=""
+            />
+            <UserCard
+              imageUrl="/Image.png"
+              rating="4.9"
+              name="Gio"
+              age="36"
+              occupation="Product Manager"
+              education="Harvard University"
+              location="Portland, Oregon USA"
+              className=""
+            />
+            <UserCard
+              imageUrl="/Image-1.png"
+              rating="4.9"
+              name="Gio"
+              age="36"
+              occupation="Product Manager"
+              education="Harvard University"
+              location="Portland, Oregon USA"
+              className=""
+            />
+            <UserCard
+              imageUrl="/Image.png"
+              rating="4.9"
+              name="Gio"
+              age="36"
+              occupation="Product Manager"
+              education="Harvard University"
+              location="Portland, Oregon USA"
+              className=""
+            />
+          </div>
+        </div>
+        <div className=" Section2 mt-36 lg:mt-44 mb-12 lg:mb-32 px-5">
+          <div className="rounded border border-Overlay bg-Overlay py-6 items-center px-8 flex flex-row">
+            <div className="  flex flex-col lg:flex-row items-center w-full justify-between">
+              <div className=" flex flex-col items-center lg:items-start pb-8 lg:pb-0 lg:flex-row gap-8">
+                <div className="text-Primarycolor ">
+                  <img src="/hand.png"></img>
+                </div>
+                <div>
+                  <h4 className="font-bold">Exclusive deals!</h4>{" "}
+                  <p>
+                    Join our Travel Club to access secret offers and best prices
+                    for amazing stays!
+                  </p>
+                </div>
+              </div>
               <HomeButtons_Solid
-                className="py-4 px-14"
+                className="px-24"
+                style={{
+                  paddingRight: "65px",
+                  paddingLeft: "65px",
+                  color: "black",
+                }}
                 onClick={() => console.log("Login clicked")}
               >
-                Sign up now
+                Sign Up
               </HomeButtons_Solid>
-            </SectionText>
-            <Steps />
-          </SectionContainer>
+            </div>
+          </div>
         </div>
       </div>
-
-      {/* Section 5 */}
-      <TestimonialContainer />
-      {/* section 6 */}
-
-      <div className="Section6 md:p-20 p-3">
-        <div className=" sectionContainer1 md:p-12 p-5">
-          <SectionContainer className="flex gap-10 md:gap-32 ">
-            <SectionText
-              title="Get started with SplitStay today "
-              description="Turn your reserved lodging into shared savings and explore more for a fraction of the cost."
-            >
-              <HomeButtons_Solid
-                className="py-4 px-14"
-                onClick={() => console.log("Login clicked")}
-              >
-                Sign up now
-              </HomeButtons_Solid>
-            </SectionText>
-            <SectionImage imagePosition="right" imageSrc="/sec-4.png" />
-          </SectionContainer>
-        </div>
-      </div>
-
-      {/* Footer */}
     </>
   );
 };

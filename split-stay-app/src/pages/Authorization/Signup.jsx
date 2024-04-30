@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, useNavigate } from "react-router-dom";
 import EmailInput from "../../components/FormComponents/EmailInput";
 import PasswordInput from "../../components/FormComponents/PasswordInput";
 import {
@@ -30,8 +30,9 @@ const SignupPage = () => {
   const [emailError, setemailError] = useState("");
   const [passwordError, setpasswordError] = useState("");
 
-  const handleSubmit = async () => {
-    // alert("worming")
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (
       userfullName !== "" ||
@@ -45,6 +46,7 @@ const SignupPage = () => {
       });
       if (result.status == 200) {
         alert("Registration Successfull");
+        navigate("/authemail");
       } else {
         alert("Provide correct details");
       }

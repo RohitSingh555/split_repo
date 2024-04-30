@@ -1,5 +1,14 @@
 import React from "react";
-import { Outlet, Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faBed,
+  faBath,
+  faLocation,
+  faTag,
+  faList,
+  faMoneyBillAlt,
+  faUserFriends,
+} from "@fortawesome/free-solid-svg-icons";
 
 const ExperienceDiv = ({
   imageURL,
@@ -7,7 +16,6 @@ const ExperienceDiv = ({
   description,
   destination,
   openSlots,
-  accommodationIcon,
   reserved,
   beds,
   bathrooms,
@@ -15,71 +23,49 @@ const ExperienceDiv = ({
   avatarURL,
 }) => {
   return (
-    <div className="container mx-auto pt-2 md:pt-40">
-      <div className="max-w-sm rounded overflow-hidden shadow-lg">
-        <img className="w-full" src={imageURL} alt="Cover" />
-        <div className="px-6 py-4">
-          <div className="font-bold text-xl mb-2">{title}</div>
+    <div className="container mx-auto pt-2 md:pt-20 ">
+      <div className="max-w-sm border border-hrColor rounded overflow-hidden shadow-md hover:bg-Graybg cursor-pointer">
+        <img className="w-full rounded-3xl p-3" src={imageURL} alt="Cover" />
+        <div className="px-6 py-4 ">
+          <div className="font-bold text-xl mb-2">
+            <FontAwesomeIcon icon={faLocation} className="mr-2" />
+            {title}
+          </div>
           <p className="text-gray-700 text-base">{description}</p>
-          <div className="grid items-center mt-4">
-            <div className="mr-2">
+          <div className="grid grid-cols-1 gap-2 mt-4 ">
+            {/* <div className="flex items-center">
               <span className="font-semibold">Destination:</span> {destination}
+            </div> */}
+            {/* <div className="flex items-center">
+              <FontAwesomeIcon icon={faList} className="mr-2" />
+              <span className="font-semibold">Open Slots</span> {openSlots}
+            </div> */}
+            <div className="flex items-center">
+              <FontAwesomeIcon icon={faTag} className="mr-2" />
+              <span className="font-semibold">Reserved:</span>{" "}
+              {reserved ? "Yes" : "No"}
             </div>
-            <div className="mr-2">
-              <span className="font-semibold">Open Slots Available:</span>{" "}
-              {openSlots}
+            <div className="flex items-center">
+              <FontAwesomeIcon icon={faBed} className="mr-2" />
+              <span className="font-semibold">Beds:</span> {beds}
             </div>
-            <div className="mr-2 flex">
-              <span className="font-semibold">Accommodation Icon:</span>{" "}
-              {accommodationIcon}
-              <div className="mr-2">
-                {true ? (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    className="w-6 h-6"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                ) : (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    className="w-6 h-6"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M6 18L18 6M6 6l12 12"
-                    />
-                  </svg>
-                )}
-              </div>
+            <div className="flex items-center">
+              <FontAwesomeIcon icon={faBath} className="mr-2" />
+              <span className="font-semibold">Bathrooms:</span> {bathrooms}
             </div>
-            <div className="mr-2">
-              <span className="font-semibold">Bed Icon:</span> {beds}
-            </div>
-            <div className="mr-2">
-              <span className="font-semibold">Bathroom:</span> {bathrooms}
-            </div>
-            <div className="mr-2">
+            <div className="flex items-center">
+              <FontAwesomeIcon icon={faMoneyBillAlt} className="mr-2" />
               <span className="font-semibold">Price:</span> {price}
             </div>
           </div>
           <div className="flex items-center mt-4">
             <div className="mr-2">
               <span className="font-semibold">Creator Avatar:</span>{" "}
-              {/* <Avatar src={avatarURL} /> */}
+              <img
+                src={avatarURL}
+                alt="Avatar"
+                className="w-6 h-6 rounded-full inline-block"
+              />
             </div>
           </div>
         </div>

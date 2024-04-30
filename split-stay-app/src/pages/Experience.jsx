@@ -2,318 +2,126 @@ import React, { useState } from "react";
 import SectionText from "../components/SectionText";
 import { HomeButtons_Hollow } from "../components/HomeButtons";
 import SectionImage from "../components/SectionImage";
+import InfoFlexColumn from "../components/UserComponents/InfoFlexColumn";
+import LandlordDetails from "../components/UserComponents/LandlordCard";
+import TextCard from "../components/UserComponents/TextCard";
+import Tag from "../components/UserComponents/Tag";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faUserFriends,
+  faTag,
+  faLink,
+} from "@fortawesome/free-solid-svg-icons";
+import SearchDiv from "../components/UserComponents/SearchDiv";
 
 const Experience = () => {
-  const [isAnnual, setIsAnnual] = useState(true);
+  const landlordName = "LANDLORD";
+  const wireText = "Landlord";
+  const collectionData = [
+    {
+      imageUrl: "/old_woman.webp",
+      name: "Elise Beverley",
+      email: "elise@stellartech.com",
+    },
+  ];
 
   return (
     <div className=" mx-auto pt-24 ">
       <div className="border border-hrColor ">
-        <div className="flex gap-10  items-center max-w-screen-xl m-auto p-10">
+        <div className="flex gap-10  items-center max-w-screen-xl m-auto p-10 relative">
           <div>
             <SectionImage
-              style={{ width: "340px" }}
+              style={{ width: "340px", height: "250px" }}
               imagePosition="right"
-              imageSrc="/sec-4.png"
+              imageSrc="/apartment.jpeg"
+              imageClass="rounded-xl object-cover"
             />
           </div>
           <div>
+            <p className="text-xs pb-4 text-LabelEXP">
+              Day posted: 5th May 1999
+            </p>
             <SectionText
               title="50 Hagiwara"
               className=" m-auto text-left text-xl font-medium"
               description="50 Hagiwara Tea Garden Dr, San Francisco, CA 94118, United States"
             />
+
+            <div>
+              <button
+                type="button"
+                class="text-white bg-Black hover:Black focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 w-4/12 mb-2 "
+              >
+                + &nbsp;Create a Plan
+              </button>
+              <HomeButtons_Hollow
+                className="lg:py-2 px-12"
+                onClick={() => console.log("Signup clicked")}
+              >
+                <FontAwesomeIcon icon={faUserFriends} />
+                &nbsp;Request to join
+              </HomeButtons_Hollow>
+            </div>
+            <div className="absolute top-8 right-3 flex gap-4 align-middle">
+              <Tag text="Reserved" iconClass="text-blue-500" />
+              <Tag text="Private" iconClass="text-blue-500" />
+              <Link className="bg-gray-200 hover:font-bold bg-opacity-20 backdrop-filter backdrop-blur-lg rounded-md p-2 flex items-center">
+                Accommodation URL <FontAwesomeIcon icon={faLink} />
+              </Link>
+            </div>
+          </div>
+          <div></div>
+        </div>
+      </div>
+
+      <div className=" rounded-xl pt-5">
+        <div className="flex gap-10  items-center max-w-screen-xl m-auto">
+          <div className="border flex items-center justify-start rounded-xl border-hrColor p-6 w-full gap-5">
+            <div className="border rounded-xl border-hrColor p-6 w-full">
+              <InfoFlexColumn label="Number of units" info="1" />
+            </div>
+            <div className="border rounded-xl border-hrColor p-6 w-full">
+              <InfoFlexColumn label="Current Income" info="$ 0" />
+            </div>
+            <div className="border rounded-xl border-hrColor p-6 w-full">
+              <InfoFlexColumn label="Rooms" info="3" />
+            </div>
+            <div className="border rounded-xl border-hrColor p-6 w-full">
+              <InfoFlexColumn label="Bathrooms" info="2" />
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="border border-hrColor p-12">
-        <div className="flex gap-10  items-center max-w-screen-xl m-auto">
-          <div></div>
-          <div>
-            <SectionText
-              title="104 Montgomery St"
-              className=" m-auto text-left text-xl font-medium"
-              description="104 Montgomery St, San Francisco, CA 94129, United States"
+      {/* Landlord details */}
+      <div className=" rounded-xl  p-12">
+        <div className="border rounded-xl p-6 border-hrColor flex gap-10  items-center max-w-screen-xl m-auto px-12">
+          <LandlordDetails
+            landlordName={landlordName}
+            wireText={wireText}
+            collectionData={collectionData}
+          />
+        </div>
+      </div>
+
+      <div className="border rounded-xl p-6 border-hrColor max-w-screen-xl m-auto px-12">
+        <SearchDiv placeholder="Search..." buttonText="Add" UnitName="Units" />
+
+        <div className="pt-4">
+          <h4 className="text-xl font-medium mr-4">Leased</h4>
+          <div className="flex gap-5">
+            <TextCard
+              divclass="bg-gray-200 p-4 rounded-lg shadow-md"
+              title="Unit 2"
+              description="2 bedrooms, 2 bathrooms, meditation room, minimalist living space, eco-friendly materials, bamboo cabinetry, recycled glass countertops."
+            />
+            <TextCard
+              divclass="bg-gray-200 p-4 rounded-lg shadow-md"
+              title="Unit 2"
+              description="2 bedrooms, 2 bathrooms, meditation room, minimalist living space, eco-friendly materials, bamboo cabinetry, recycled glass countertops."
             />
           </div>
-        </div>
-      </div>
-
-      <div className="flex flex-col items-center ">
-        <div className="relative font-inter antialiased">
-          <main className="relative  flex flex-col justify-center bg-slate-50 overflow-hidden pt-12">
-            <div className="w-full max-w-6xl mx-auto px-4 md:px-6 ">
-              <div className="max-w-sm mx-auto grid gap-6 lg:grid-cols-3 items-start lg:max-w-none">
-                {/* Pricing tab 1 */}
-                <div className="h-full shadow shadow-blue-500/40 md:shadow-indigo-500/40">
-                  <div className="relative flex flex-col h-full p-6 rounded-2xl shadow shadow-blue-500/40 md:shadow-indigo-500/40">
-                    {/* Pricing tab 1 content */}
-                    <div className="mb-5">
-                      <div className="text-slate-900 font-semibold mb-1">
-                        Basic Plan
-                      </div>
-                      <div className="inline-flex items-baseline mb-2">
-                        <span className="text-slate-900 font-bold text-3xl">
-                          ₦
-                        </span>
-                        <span
-                          className="text-slate-900 font-bold text-4xl"
-                          x-text="isAnnual ? '79' : '85'"
-                        >
-                          50K
-                        </span>
-                        <span className="text-slate-500 font-medium">
-                          / Month
-                        </span>
-                      </div>
-                      <div className="text-sm text-slate-500 mb-5 pt-12">
-                        Company payroll from ₦1m.
-                      </div>
-                    </div>
-
-                    <ul className="text-slate-600 text-sm space-y-3 grow">
-                      <li className="flex items-center">
-                        <svg
-                          className="w-3 h-3 fill-emerald-500 mr-3 shrink-0"
-                          viewBox="0 0 12 12"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
-                        </svg>
-                        <span>This feature is available for you.</span>
-                      </li>
-                      <li className="flex items-center">
-                        <svg
-                          className="w-3 h-3 fill-emerald-500 mr-3 shrink-0"
-                          viewBox="0 0 12 12"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
-                        </svg>
-                        <span>Full time view on your analytics.</span>
-                      </li>
-                      <li className="flex items-center">
-                        <svg
-                          className="w-3 h-3 fill-emerald-500 mr-3 shrink-0"
-                          viewBox="0 0 12 12"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
-                        </svg>
-                        <span>Real time with our support team.</span>
-                      </li>
-                      <li className="flex items-center">
-                        <svg
-                          className="w-3 h-3 fill-emerald-500 mr-3 shrink-0"
-                          viewBox="0 0 12 12"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
-                        </svg>
-                        <span>Some amount of users for this plan.</span>
-                      </li>
-                      <li className="flex items-center">
-                        <svg
-                          className="w-3 h-3 fill-emerald-500 mr-3 shrink-0"
-                          viewBox="0 0 12 12"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
-                        </svg>
-                        <span>This feature is available for you.</span>
-                      </li>
-                    </ul>
-                    <HomeButtons_Hollow
-                      className="py-3 px-10 mt-10 fw-lighter"
-                      onClick={() => console.log("Signup clicked")}
-                    >
-                      Subscribe
-                    </HomeButtons_Hollow>
-                  </div>
-                </div>
-
-                {/* Pricing tab 2 */}
-                <div className=" h-full shadow shadow-blue-500/40 md:shadow-indigo-500/40">
-                  <div className="relative flex flex-col h-full p-6 rounded-2xl bg-white   shadow shadow-slate-950/5">
-                    <div className="absolute top-0 right-0 mr-6 -mt-4">
-                      <div className="inline-flex items-center text-xs font-semibold py-1.5 px-3 bg-emerald-500 text-white rounded-full shadow-sm shadow-slate-950/5">
-                        Pro Plan
-                      </div>
-                    </div>
-                    <div className="mb-5">
-                      <div className="text-slate-900  font-semibold mb-1">
-                        Perform
-                      </div>
-                      <div className="inline-flex items-baseline mb-2">
-                        <span className="text-slate-900  font-bold text-3xl">
-                          ₦
-                        </span>
-                        <span
-                          className="text-slate-900  font-bold text-4xl"
-                          x-text="isAnnual ? '79' : '85'"
-                        >
-                          50K{" "}
-                        </span>
-                        <span className="text-slate-500 font-medium">
-                          / Month
-                        </span>
-                      </div>
-                      <div className="text-sm text-slate-500 mb-5 pt-12">
-                        Company payroll from ₦1m
-                      </div>
-                    </div>
-
-                    <ul className="text-slate-600  text-sm space-y-3 grow">
-                      <li class="flex items-center">
-                        <svg
-                          class="w-3 h-3 fill-emerald-500 mr-3 shrink-0"
-                          viewBox="0 0 12 12"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
-                        </svg>
-                        <span>This feature is available for you.</span>
-                      </li>
-                      <li class="flex items-center">
-                        <svg
-                          class="w-3 h-3 fill-emerald-500 mr-3 shrink-0"
-                          viewBox="0 0 12 12"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
-                        </svg>
-                        <span>Full time view on your analytics.</span>
-                      </li>
-                      <li class="flex items-center">
-                        <svg
-                          class="w-3 h-3 fill-emerald-500 mr-3 shrink-0"
-                          viewBox="0 0 12 12"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
-                        </svg>
-                        <span>Real time with our support team.</span>
-                      </li>
-                      <li class="flex items-center">
-                        <svg
-                          class="w-3 h-3 fill-emerald-500 mr-3 shrink-0"
-                          viewBox="0 0 12 12"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
-                        </svg>
-                        <span>Some amount of users for this plan.</span>
-                      </li>
-                      <li class="flex items-center">
-                        <svg
-                          class="w-3 h-3 fill-emerald-500 mr-3 shrink-0"
-                          viewBox="0 0 12 12"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
-                        </svg>
-                        <span>This feature is available for you.</span>
-                      </li>
-                    </ul>
-                    <HomeButtons_Hollow
-                      className="py-3 px-10 mt-10 fw-lighter "
-                      onClick={() => console.log("Signup clicked")}
-                    >
-                      Subscribe
-                    </HomeButtons_Hollow>
-                  </div>
-                </div>
-
-                {/* Pricing tab 3 */}
-                <div className="h-full shadow shadow-blue-500/40 md:shadow-indigo-500/40">
-                  <div className="relative flex flex-col h-full p-6 rounded-2xl bg-white   shadow shadow-slate-950/5">
-                    <div className="mb-5">
-                      <div className="text-slate-900  font-semibold mb-1">
-                        Business Plan
-                      </div>
-                      <div className="inline-flex items-baseline mb-2">
-                        <span className="text-slate-900  font-bold text-3xl">
-                          ₦
-                        </span>
-                        <span
-                          className="text-slate-900  font-bold text-4xl"
-                          x-text="isAnnual ? '79' : '85'"
-                        >
-                          50K{" "}
-                        </span>
-                        <span className="text-slate-500 font-medium">
-                          / Month
-                        </span>
-                      </div>
-                      <div className="text-sm text-slate-500 mb-5 pt-12">
-                        Company payroll from ₦1m
-                      </div>
-                    </div>
-
-                    <ul className="text-slate-600  text-sm space-y-3 grow">
-                      <li class="flex items-center">
-                        <svg
-                          class="w-3 h-3 fill-emerald-500 mr-3 shrink-0"
-                          viewBox="0 0 12 12"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
-                        </svg>
-                        <span>This feature is available for you.</span>
-                      </li>
-                      <li class="flex items-center">
-                        <svg
-                          class="w-3 h-3 fill-emerald-500 mr-3 shrink-0"
-                          viewBox="0 0 12 12"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
-                        </svg>
-                        <span>Full time view on your analytics.</span>
-                      </li>
-                      <li class="flex items-center">
-                        <svg
-                          class="w-3 h-3 fill-emerald-500 mr-3 shrink-0"
-                          viewBox="0 0 12 12"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
-                        </svg>
-                        <span>Real time with our support team.</span>
-                      </li>
-                      <li class="flex items-center">
-                        <svg
-                          class="w-3 h-3 fill-emerald-500 mr-3 shrink-0"
-                          viewBox="0 0 12 12"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
-                        </svg>
-                        <span>Some amount of users for this plan.</span>
-                      </li>
-                      <li class="flex items-center">
-                        <svg
-                          class="w-3 h-3 fill-emerald-500 mr-3 shrink-0"
-                          viewBox="0 0 12 12"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
-                        </svg>
-                        <span>This feature is available for you.</span>
-                      </li>
-                    </ul>
-                    <HomeButtons_Hollow
-                      className="py-3 px-10 mt-10 fw-lighter "
-                      onClick={() => console.log("Signup clicked")}
-                    >
-                      Subscribe
-                    </HomeButtons_Hollow>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </main>
         </div>
       </div>
     </div>

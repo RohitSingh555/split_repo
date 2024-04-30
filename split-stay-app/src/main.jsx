@@ -13,6 +13,10 @@ import PreferencePage from "./pages/Authorization/Preference.jsx";
 import OnboardingPreferencePage from "./pages/Authorization/OnboardingPreference.jsx";
 import OnboardingQuestions from "./pages/Authorization/OnboardingQuestions.jsx";
 import MainPage from "./pages/LandingPage.jsx";
+import Experience from "./pages/Experience.jsx";
+import AuthEmailPage from "./pages/Authorization/AuthEmail.jsx";
+import ExperienceForm from "./pages/Authorization/ExperienceForm.jsx";
+import UserExperiencePage from "./pages/Authorization/UserExperience.jsx";
 
 const router = createBrowserRouter([
   {
@@ -63,6 +67,26 @@ const router = createBrowserRouter([
       {
         path: "signup",
         element: <SignupPage />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "experience",
+        element: <Experience />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "experiences",
+        element: <UserExperiencePage />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "experiencesform",
+        element: <ExperienceForm />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "authemail",
+        element: <AuthEmailPage />,
         errorElement: <ErrorPage />,
       },
     ],

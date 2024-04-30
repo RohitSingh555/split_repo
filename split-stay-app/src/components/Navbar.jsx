@@ -102,7 +102,7 @@ const Navbar = () => {
               <li>
                 <Link
                   to="/"
-                  className="block py-2 px-3 text-gray-900 bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+                  className="block py-2 px-3 text-gray-900 bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 "
                   aria-current="page"
                   onClick={closeNavbar}
                 >
@@ -112,7 +112,7 @@ const Navbar = () => {
               <li>
                 <Link
                   to="/about"
-                  className="block py-2 px-3 text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+                  className="block py-2 px-3 text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 "
                   onClick={closeNavbar}
                 >
                   About Us
@@ -121,7 +121,7 @@ const Navbar = () => {
               <li>
                 <Link
                   to="/pricing"
-                  className="block py-2 px-3 text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+                  className="block py-2 px-3 text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 "
                   onClick={closeNavbar}
                 >
                   Pricing
@@ -130,7 +130,7 @@ const Navbar = () => {
               <li>
                 <Link
                   to="#"
-                  className="block py-2 px-3 text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+                  className="block py-2 px-3 text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 "
                   onClick={closeNavbar}
                 >
                   Contact
@@ -164,7 +164,7 @@ const Navbar = () => {
               <li>
                 <Link
                   to="/"
-                  className="block py-2 px-3 text-gray-900 bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+                  className="block py-2 px-3 text-gray-900 bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 "
                   aria-current="page"
                   onClick={closeNavbar}
                 >
@@ -174,7 +174,7 @@ const Navbar = () => {
               <li>
                 <Link
                   to="/pricing"
-                  className="block py-2 px-3 text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+                  className="block py-2 px-3 text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 "
                   onClick={closeNavbar}
                 >
                   Experience
@@ -183,7 +183,7 @@ const Navbar = () => {
               <li>
                 <Link
                   to="/pricing"
-                  className="block py-2 px-3 text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+                  className="block py-2 px-3 text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 "
                   onClick={closeNavbar}
                 >
                   Post
@@ -192,7 +192,7 @@ const Navbar = () => {
               <li>
                 <Link
                   to="/pricing"
-                  className="block py-2 px-3 text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+                  className="block py-2 px-3 text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 "
                   onClick={closeNavbar}
                 >
                   Bookings

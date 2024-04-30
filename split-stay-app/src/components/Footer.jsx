@@ -11,7 +11,7 @@ import { faInfinity } from "@fortawesome/free-solid-svg-icons";
 
 const Footer = () => {
   return (
-    <footer className="px-4 pt-12 pb-6 dark:bg-gray-100 dark:text-gray-800">
+    <footer className="px-4 pt-12 pb-6 ">
       <hr className="border-1 border-gray-300 opacity-30"></hr>
       <div className="container flex flex-col lg:flex-row justify-between py-12 mx-auto space-y-12 lg:space-y-0">
         <div className="lg:w-64">
@@ -70,7 +70,7 @@ const Footer = () => {
         </div>
         <div className="grid grid-cols-1 gap-y-12 lg:w-2/3 lg:grid-cols-3">
           <div className="space-y-5">
-            <h3 className="tracking-wide uppercase dark:text-gray-900 font-bold text-lg">
+            <h3 className="tracking-wide uppercase font-bold text-lg">
               Company
             </h3>
             <ul className="space-y-3">
@@ -97,9 +97,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className="space-y-5">
-            <h3 className="tracking-wide uppercase dark:text-gray-900 font-bold text-lg">
-              Terms
-            </h3>
+            <h3 className="tracking-wide uppercase font-bold text-lg">Terms</h3>
             <ul className="space-y-3">
               <li>
                 <a rel="noopener noreferrer" href="#">
@@ -119,7 +117,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className="space-y-5">
-            <h3 className="tracking-wide uppercase dark:text-gray-900 font-bold text-lg">
+            <h3 className="tracking-wide uppercase font-bold text-lg">
               Join Our Newsletter
             </h3>
             <form className="mt-6">
@@ -147,8 +145,8 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <hr className="h-px my-8 bg-gray-200 border-2 dark:bg-gray-700 opacity-10"></hr>
-      <div className="py-6 text-sm text-center dark:text-gray-600 md:pb-24">
+      <hr className="h-px my-8 bg-gray-200 border-2  opacity-10"></hr>
+      <div className="py-6 text-sm text-center  md:pb-24">
         Copyright @ SplitStay 2023. All Rights Reserved.
       </div>
     </footer>

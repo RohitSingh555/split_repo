@@ -1,31 +1,50 @@
 import React, { useState } from "react";
+import axios from "axios";
 import PreferenceDiv from "../../components/FormComponents/PreferenceDiv";
 import {
   HomeButtons_Hollow,
   HomeButtons_Solid,
 } from "../../components/HomeButtons";
-import { Link } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
+import optionsTags from "./OptionsTags.json";
 const OnboardingPreferencePage = () => {
   const [selectedOptions, setSelectedOptions] = useState([]);
 
+  const navigate = useNavigate();
+
   // Options array
-  const options = [
-    "Wellness",
-    "Entrepreneurship",
-    "Music",
-    "Art",
-    "Design",
-    "Making Friends",
-    "Sports",
-    "Tech",
-  ];
+  // const options = [
+  //   "Wellness",
+  //   "Entrepreneurship",
+  //   "Music",
+  //   "Art",
+  //   "Design",
+  //   "Making Friends",
+  //   "Sports",
+  //   "Tech",
+  // ];
 
   const handleOptionSelect = (option) => {
     if (selectedOptions.includes(option)) {
       setSelectedOptions(selectedOptions.filter((item) => item !== option));
     } else {
       setSelectedOptions([...selectedOptions, option]);
+    }
+  };
+
+  const userEmail = JSON.parse(localStorage.getItem("userData"));
+
+  const handleExperienceOption = async () => {
+    try {
+      const result = await axios.post("http://localhost:3000/userExperience", {
+        email: userEmail,
+        tags: selectedOptions,
+      });
+      if (result) {
+        navigate("/onboarding-questions");
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -72,7 +91,7 @@ const OnboardingPreferencePage = () => {
                 What are your personal interests? (can choose multiple)
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 pt-12">
-                {options.map((option, index) => (
+                {optionsTags.options.map((option, index) => (
                   <button
                     key={index}
                     className={`text-center py-2 px-4 font-medium rounded-lg border break-words border-Primarycolor outline-none focus:outline-none ${
@@ -90,7 +109,7 @@ const OnboardingPreferencePage = () => {
             <div className="flex flex-col md:flex-row md:justify-start justify-center  items-center gap-4">
               <HomeButtons_Solid
                 className="py-1 px-4 mt-10 fw-lighter w-56 mr-4"
-                onClick={() => handleExperienceOption("Skip")}
+                onClick={() => handleExperienceOption()}
               >
                 Get Started
               </HomeButtons_Solid>

@@ -1,11 +1,6 @@
 // Home.jsx
-import SectionText from "../components/SectionText";
 import { HomeButtons_Solid } from "../components/HomeButtons";
-import SectionContainer from "../components/SectionContainer";
-import SectionImage from "../components/SectionImage";
 import "../styles/home.css";
-import Steps from "../components/Steps";
-import TestimonialContainer from "../components/TestimonialContainer";
 import HeroSection_Main from "../components/HeroSection_Main";
 import Heading from "../components/Heading";
 import UserCard from "../components/UserComponents/UserCard";

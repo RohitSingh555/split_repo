@@ -4,9 +4,11 @@ import {
   HomeButtons_Hollow,
   HomeButtons_Solid,
 } from "../../components/HomeButtons";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const OnboardingQuestions = () => {
+  const navigate = useNavigate();
   const [answers, setAnswers] = useState({
     hostedTrips: "",
     priceRange: "",
@@ -16,6 +18,26 @@ const OnboardingQuestions = () => {
   // Function to handle user's answers
   const handleAnswer = (question, answer) => {
     setAnswers({ ...answers, [question]: answer });
+  };
+
+  const handleExperience = async () => {
+    try {
+      const result = await axios.put(
+        "http://localhost:3000/userExperienceUpdate",
+        {
+          hostedTrips: answers.hostedTrips === "Yes" ? true : false,
+          priceRange: answers.priceRange,
+          groupSize: answers.groupSize,
+        }
+      );
+      console.log(result);
+      if (result) {
+        navigate("/home");
+        // navigate("/authemail");
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <>
@@ -128,7 +150,7 @@ const OnboardingQuestions = () => {
             <div className="flex flex-col md:flex-row md:justify-start justify-center  items-center gap-4">
               <HomeButtons_Solid
                 className="py-1 px-4 mt-10 fw-lighter w-56 mr-4"
-                onClick={() => handleExperienceOption("Skip")}
+                onClick={handleExperience}
               >
                 Next
               </HomeButtons_Solid>

@@ -8,6 +8,7 @@ export default {
       Black: "rgb(0 0 0)",
       InputLabel: "#5C5C5C",
       Overlay: "rgb(203 203 203 / 56%)",
+      hrColor: "rgb(225 225 225 / 56%)",
       LandingPageBg: "#F8F8FF",
       TextFooterLogin: "#6D6F71",
       HeroSectionBackgroundColor: "#FDFDFF",

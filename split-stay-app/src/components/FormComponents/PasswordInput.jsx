@@ -3,7 +3,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons"; // Import eye and eye-slash icons
 import { Link } from "react-router-dom";
 
-const PasswordInput = ({ className, label }) => {
+const PasswordInput = ({
+  className,
+  label,
+  handleChange,
+  value,
+  required,
+  error,
+}) => {
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
@@ -28,7 +35,11 @@ const PasswordInput = ({ className, label }) => {
       <input
         className="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border-2 border-Primarycolor rounded py-2 px-4 block w-full appearance-none"
         type={showPassword ? "text" : "password"}
+        onChange={handleChange}
+        value={value}
+        required={required}
       />
+      {error && <p className="text-red-500 text-xs italic">{error}</p>}
     </div>
   );
 };

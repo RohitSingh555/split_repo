@@ -1,6 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 
-const SearchDiv = ({ placeholder, buttonText, UnitName }) => {
+const SearchDiv = ({ data, placeholder, buttonText, UnitName, onClick }) => {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [filteredData, setFilteredData] = useState(data);
+
+  const handleSearch = (e) => {
+    const query = e.target.value.toLowerCase();
+    setSearchQuery(query);
+    const filtered = data.filter(
+      (item) => typeof item === "string" && item.toLowerCase().includes(query)
+    );
+    setFilteredData(filtered);
+  };
+
   return (
     <div className="flex justify-between items-center mb-4 w-full">
       <h2 className="text-3xl font-medium mr-4">{UnitName}</h2>
@@ -25,15 +37,17 @@ const SearchDiv = ({ placeholder, buttonText, UnitName }) => {
           </div>
           <input
             type="text"
-            id="voice-search"
             className="bg-gray-50 border border-Overlay text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
             placeholder={placeholder}
+            value={searchQuery}
+            onChange={handleSearch}
             required
           />
         </div>
         <button
           type="button"
           className="text-white bg-Black hover:Black focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 w-4/12 mb-2"
+          onClick={onClick}
         >
           + &nbsp;{buttonText}
         </button>

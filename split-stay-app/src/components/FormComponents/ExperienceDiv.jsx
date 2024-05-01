@@ -23,15 +23,20 @@ const ExperienceDiv = ({
   avatarURL,
 }) => {
   return (
-    <div className="container mx-auto pt-2 md:pt-20 ">
+    <div className="container mx-auto pt-2 md:pt-10 ">
       <div className="max-w-sm border border-hrColor rounded overflow-hidden shadow-md hover:bg-Graybg cursor-pointer">
-        <img className="w-full rounded-3xl p-3" src={imageURL} alt="Cover" />
+        <img
+          className="w-full rounded-3xl p-3 max-h-48 min-h-48 object-fit"
+          src={imageURL}
+          alt="Cover"
+        />
         <div className="px-6 py-4 ">
           <div className="font-bold text-xl mb-2">
             <FontAwesomeIcon icon={faLocation} className="mr-2" />
             {title}
           </div>
-          <p className="text-gray-700 text-base">{description}</p>
+          <p className="text-gray-700 text-base line-clamp-2">{description}</p>
+
           <div className="grid grid-cols-1 gap-2 mt-4 ">
             {/* <div className="flex items-center">
               <span className="font-semibold">Destination:</span> {destination}
@@ -42,29 +47,30 @@ const ExperienceDiv = ({
             </div> */}
             <div className="flex items-center">
               <FontAwesomeIcon icon={faTag} className="mr-2" />
-              <span className="font-semibold">Reserved:</span>{" "}
+              <span className="font-semibold">Reserved:</span>&nbsp;{" "}
               {reserved ? "Yes" : "No"}
             </div>
             <div className="flex items-center">
               <FontAwesomeIcon icon={faBed} className="mr-2" />
-              <span className="font-semibold">Beds:</span> {beds}
+              <span className="font-semibold">Beds:</span> &nbsp;{beds}
             </div>
             <div className="flex items-center">
               <FontAwesomeIcon icon={faBath} className="mr-2" />
-              <span className="font-semibold">Bathrooms:</span> {bathrooms}
+              <span className="font-semibold">Bathrooms:</span> &nbsp;
+              {bathrooms}
             </div>
             <div className="flex items-center">
               <FontAwesomeIcon icon={faMoneyBillAlt} className="mr-2" />
-              <span className="font-semibold">Price:</span> {price}
+              <span className="font-semibold">Price:</span>&nbsp;$ {price}
             </div>
           </div>
           <div className="flex items-center mt-4">
             <div className="mr-2">
-              <span className="font-semibold">Creator Avatar:</span>{" "}
+              <span className="font-semibold">Added By:</span>&nbsp;{" "}
               <img
                 src={avatarURL}
                 alt="Avatar"
-                className="w-6 h-6 rounded-full inline-block"
+                className="w-8 h-8 rounded-full inline-block"
               />
             </div>
           </div>

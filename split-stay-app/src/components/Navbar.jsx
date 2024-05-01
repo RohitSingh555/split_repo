@@ -1,6 +1,7 @@
 import { HomeButtons_Hollow, HomeButtons_Solid } from "./HomeButtons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import LogoutButton from "../pages/Authorization/Logout";
 
 const Navbar = () => {
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
@@ -18,19 +19,53 @@ const Navbar = () => {
   const isAbout = location.pathname === "/about";
   const isLogin = location.pathname === "/login";
   const isSignup = location.pathname === "/signup";
-  const shouldDisplay = isHome || isAbout || isLogin || isSignup;
+  const isPricing = location.pathname === "/pricing";
+  const shouldDisplay = isHome || isAbout || isLogin || isSignup || isPricing;
+
+  const [userData, setUserData] = useState(null);
+  const [FullName, setFullname] = useState(null);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    // Check if token exists in local storage
+    const token = localStorage.getItem("token");
+    if (token) {
+      setIsAuthenticated(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    const storedUserData = localStorage.getItem("userEmail");
+    const storedFullName = localStorage.getItem("userFullName");
+
+    if (storedUserData !== null) {
+      setUserData(storedUserData);
+    }
+    if (storedFullName !== null) {
+      setFullname(storedFullName);
+    }
+  }, []); // Run only once on component mount
 
   return (
     <nav className="bg-white fixed w-full z-20 top-0 start-0 py-3 shadow-md">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <Link
-          to="/"
-          className="flex items-center space-x-3 rtl:space-x-reverse"
-        >
-          <img src="/SplitStay.png" className="h-10" alt="SplitStay Logo" />
-        </Link>
+        {shouldDisplay && isAuthenticated ? (
+          <Link
+            to="/"
+            className="flex items-center space-x-3 rtl:space-x-reverse"
+          >
+            <img src="/SplitStay.png" className="h-10" alt="SplitStay Logo" />
+          </Link>
+        ) : (
+          <Link
+            to="/home"
+            className="flex items-center space-x-3 rtl:space-x-reverse"
+          >
+            <img src="/SplitStay.png" className="h-10" alt="SplitStay Logo" />
+          </Link>
+        )}
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-          {shouldDisplay ? (
+          {shouldDisplay && !isAuthenticated ? (
             <div className="md:flex gap-5 hidden">
               <Link to={"/login"} onClick={closeNavbar}>
                 <HomeButtons_Hollow
@@ -51,19 +86,20 @@ const Navbar = () => {
             </div>
           ) : (
             <div className="md:flex items-center gap-5 hidden">
-              <Link className="text-4xl">
+              {/* <Link className="text-4xl">
                 <img src="/search.png"></img>
               </Link>
               <Link className="text-4xl">
                 <img src="/bell.png"></img>
-              </Link>
+              </Link> */}
               <Link className="flex items-end gap-4">
                 <img src="/userimg.png"></img>
                 <div>
-                  <h4 className="font-bold">Cody Fisher</h4>
-                  <h5>kenzi.lawson@example.com</h5>
+                  <h4 className="font-bold">{FullName}</h4>
+                  <h5>{userData}</h5>
                 </div>
               </Link>
+              <LogoutButton />
             </div>
           )}
           <button
@@ -97,7 +133,7 @@ const Navbar = () => {
           }`}
           id="navbar-sticky"
         >
-          {shouldDisplay ? (
+          {shouldDisplay && !isAuthenticated ? (
             <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium  rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white ">
               <li>
                 <Link
@@ -163,12 +199,12 @@ const Navbar = () => {
             <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white ">
               <li>
                 <Link
-                  to="/"
+                  to="/experiences"
                   className="block py-2 px-3 text-gray-900 bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 "
                   aria-current="page"
                   onClick={closeNavbar}
                 >
-                  Home
+                  Experiences
                 </Link>
               </li>
               <li>
@@ -177,7 +213,7 @@ const Navbar = () => {
                   className="block py-2 px-3 text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 "
                   onClick={closeNavbar}
                 >
-                  Experience
+                  Chats
                 </Link>
               </li>
               <li>
@@ -186,18 +222,18 @@ const Navbar = () => {
                   className="block py-2 px-3 text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 "
                   onClick={closeNavbar}
                 >
-                  Post
+                  Travellers
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   to="/pricing"
                   className="block py-2 px-3 text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 "
                   onClick={closeNavbar}
                 >
-                  Bookings
+                  Users
                 </Link>
-              </li>
+              </li> */}
             </ul>
           )}
         </div>

@@ -34,7 +34,7 @@ const LoginPage = () => {
   useEffect(() => {
     const isAuthenticated = localStorage.getItem("isAuthenticated");
     if (isAuthenticated === "true") {
-      navigate("/authemail");
+      navigate("/experiences");
     }
   }, []);
 
@@ -46,10 +46,12 @@ const LoginPage = () => {
         password: userPassword,
       });
       if (result.status == 200) {
+        console.log(result);
         localStorage.setItem("isAuthenticated", "true");
-        localStorage.setItem("userData", JSON.stringify(user.email));
-        alert("Login successful");
-        navigate("/authemail");
+        localStorage.setItem("userEmail", userEmail);
+        localStorage.setItem("userFullName", result.data.data.fullName);
+        localStorage.setItem("token", result.data.token);
+        navigate("/experiences");
       } else {
         alert("Please provide email and password");
       }
@@ -87,7 +89,7 @@ const LoginPage = () => {
           localStorage.setItem("isAuthenticated", "true");
           localStorage.setItem("userData", JSON.stringify(user.email));
           authUserData(user);
-          navigate("/authemail");
+          navigate("/experiences");
         } else {
           navigate("/login");
         }
@@ -119,7 +121,7 @@ const LoginPage = () => {
           localStorage.setItem("isAuthenticated", "true");
           localStorage.setItem("userData", JSON.stringify(user.email));
           authUserData(user);
-          navigate("/authemail");
+          navigate("/experiences");
         } else {
           navigate("/login");
         }
@@ -152,7 +154,7 @@ const LoginPage = () => {
           localStorage.setItem("isAuthenticated", "true");
           localStorage.setItem("userData", JSON.stringify(user.email));
           authUserData(user);
-          navigate("/authemail");
+          navigate("/experiences");
         } else {
           navigate("/login");
         }
@@ -222,7 +224,7 @@ const LoginPage = () => {
                   </Link>
                 </div>
               </div>
-              {/* <Link to={"/AuthEmail"}> */}
+              {/* <Link to={"/experiences"}> */}
               <HomeButtons_Solid
                 className=" mt-16 px-10 w-full"
                 // onClick={() => handleSubmit()}

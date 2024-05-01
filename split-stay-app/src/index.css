@@ -37,3 +37,7 @@ input[type="checkbox"]::before {
     transform: scale(0);
     background-color: green;
 }
+
+hr {
+    z-index: 3 !important;
+}

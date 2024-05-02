@@ -1,12 +1,12 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 const firebaseConfig = {
-  apiKey: "AIzaSyAFczJeAZloKLBmj7R0_GbUp6KmGWhmtqM",
-  authDomain: "split-stay-1.firebaseapp.com",
-  projectId: "split-stay-1",
-  storageBucket: "split-stay-1.appspot.com",
-  messagingSenderId: "830532803848",
-  appId: "1:830532803848:web:b711ddadaebf215abee0bd",
+  apiKey: "AIzaSyDCTvsp3tjU76jg2UijC-NGQRtEUA4HewY",
+  authDomain: "split-stay-5f43e.firebaseapp.com",
+  projectId: "split-stay-5f43e",
+  storageBucket: "split-stay-5f43e.appspot.com",
+  messagingSenderId: "1010129697358",
+  appId: "1:1010129697358:web:15c9a47ab67c636157a11f",
 };
 
 // Initialize Firebase

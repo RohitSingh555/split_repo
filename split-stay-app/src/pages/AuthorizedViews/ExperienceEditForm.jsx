@@ -1,22 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { HomeButtons_Solid } from "../../components/HomeButtons";
 import CustomInput from "../../components/FormComponents/CustomInput";
-import "react-date-range/dist/styles.css"; // main style file
-import "react-date-range/dist/theme/default.css"; // theme css file
+import "react-date-range/dist/styles.css";
+import "react-date-range/dist/theme/default.css";
 import { DateRange } from "react-date-range";
 
-const ExperienceForm = ({
-  closeModal,
-  newExperience,
-  setnewExperience,
-  setFilteredExperiences,
-  filteredExperiences,
-}) => {
+const ExperienceEditForm = ({ closeModal, experience }) => {
   const navigate = useNavigate();
+  const params = useParams();
   const [formData, setFormData] = useState({
     destination: "",
     coverImage: "",
@@ -68,15 +61,12 @@ const ExperienceForm = ({
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setnewExperience(formData);
-    // setFilteredExperiences((prevData) => [...prevData, formData]);
     try {
       const token = localStorage.getItem("token");
       const email = localStorage.getItem("userEmail");
-      console.log(token);
 
-      const result = await axios.post(
-        "http://localhost:3000/userExperienceForm",
+      const result = await axios.put(
+        `http://localhost:3000/userExperienceForm/${experience._id}`,
         formData,
         {
           headers: {
@@ -100,6 +90,7 @@ const ExperienceForm = ({
 
   useEffect(() => {
     console.log("Initialized Form");
+    setFormData(experience);
   }, []);
 
   return (
@@ -255,4 +246,4 @@ const ExperienceForm = ({
   );
 };
 
-export default ExperienceForm;
+export default ExperienceEditForm;

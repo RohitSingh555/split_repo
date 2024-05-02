@@ -82,13 +82,19 @@ const LoginPage = () => {
       .then(async (result) => {
         const credential = GoogleAuthProvider.credentialFromResult(result);
         const token = credential.accessToken;
-        const idToken = await Authentication.currentUser.getIdToken();
+        const idToken = await result.user.getIdToken(true);
+
         const user = result.user;
         console.log("user==...", user);
+
         if (user) {
           localStorage.setItem("isAuthenticated", "true");
-          localStorage.setItem("userData", JSON.stringify(user.email));
+          localStorage.setItem("userEmail", user.email);
+          localStorage.setItem("userFullName", user.displayName);
+          localStorage.setItem("token", token);
+
           authUserData(user);
+
           navigate("/experiences");
         } else {
           navigate("/login");
@@ -249,13 +255,13 @@ const LoginPage = () => {
                 <img src="/fb.png"></img>
                 <span className="hidden lg:block">Facebook</span>
               </HomeButtons_Hollow>
-              <HomeButtons_Hollow
+              {/* <HomeButtons_Hollow
                 className="py-1 px-4 mt-10 flex justify-around font-medium items-center fw-lighter w-36 "
                 onClick={appleHandler}
               >
                 <img src="/apple.png"></img>
                 <span className="hidden lg:block">Apple</span>
-              </HomeButtons_Hollow>
+              </HomeButtons_Hollow> */}
               <HomeButtons_Hollow
                 className="py-1 px-4 mt-10 fw-lighter font-medium flex justify-around w-36"
                 onClick={googleHandler}

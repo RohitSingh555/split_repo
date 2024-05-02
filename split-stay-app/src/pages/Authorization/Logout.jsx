@@ -9,7 +9,8 @@ const LogoutButton = () => {
   const handleLogout = () => {
     localStorage.clear();
     // Navigate to the home page or any other desired page after logout
-    navigate("/");
+    window.location.href = "/";
+    // navigate("/");
   };
 
   return (

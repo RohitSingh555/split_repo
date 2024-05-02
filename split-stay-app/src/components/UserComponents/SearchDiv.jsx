@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 
-const SearchDiv = ({ data, placeholder, buttonText, UnitName, onClick }) => {
+const SearchDiv = ({
+  data,
+  placeholder,
+  buttonText,
+  UnitName,
+  onClick,
+  onSearch,
+}) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredData, setFilteredData] = useState(data);
 

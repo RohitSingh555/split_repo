@@ -11,7 +11,7 @@ const LandlordDetails = ({ landlordName, wireText, collectionData }) => {
       <div className="collection-item ">
         <Link to={url}>
           <div className="flex gap-5 items-center justify-between hover:bg-Graybg  p-4">
-            <div className="flex gap-5 items-center">
+            <div className="flex flex-col lg:flex-row gap-5 items-center">
               <div className="collection-item-image">
                 <img src={imageUrl} alt="Avatar" className="rounded w-20" />
               </div>

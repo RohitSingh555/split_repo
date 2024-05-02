@@ -31,9 +31,18 @@ const ExperienceDiv = ({
           alt="Cover"
         />
         <div className="px-6 py-4 ">
-          <div className="font-bold text-xl mb-2">
-            <FontAwesomeIcon icon={faLocation} className="mr-2" />
-            {title}
+          <div className="flex justify-between font-bold text-xl mb-2">
+            <div className="">
+              <FontAwesomeIcon icon={faLocation} className="mr-2" />
+              {title}
+            </div>
+            <div className="mr-2">
+              <img
+                src={avatarURL}
+                alt="Avatar"
+                className="w-10 h-10 rounded-full inline-block"
+              />
+            </div>
           </div>
           <p className="text-gray-700 text-base line-clamp-2">{description}</p>
 
@@ -62,16 +71,6 @@ const ExperienceDiv = ({
             <div className="flex items-center">
               <FontAwesomeIcon icon={faMoneyBillAlt} className="mr-2" />
               <span className="font-semibold">Price:</span>&nbsp;$ {price}
-            </div>
-          </div>
-          <div className="flex items-center mt-4">
-            <div className="mr-2">
-              <span className="font-semibold">Added By:</span>&nbsp;{" "}
-              <img
-                src={avatarURL}
-                alt="Avatar"
-                className="w-8 h-8 rounded-full inline-block"
-              />
             </div>
           </div>
         </div>

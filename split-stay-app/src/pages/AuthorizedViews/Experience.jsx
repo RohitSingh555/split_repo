@@ -1,18 +1,21 @@
 import React, { useEffect, useState } from "react";
 import SectionText from "../../components/SectionText";
 import { HomeButtons_Hollow } from "../../components/HomeButtons";
-import SectionImage from "../../components/SectionImage";
+import ExperienceImage from "../../components/ExperienceImage";
 import InfoFlexColumn from "../../components/UserComponents/InfoFlexColumn";
 import LandlordDetails from "../../components/UserComponents/LandlordCard";
 import TextCard from "../../components/UserComponents/TextCard";
 import Tag from "../../components/UserComponents/Tag";
 import { Link, useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ExperienceEditForm from "./ExperienceEditForm";
+
 import {
   faUserFriends,
   faTag,
   faArrowLeftLong,
   faLink,
+  faEdit,
 } from "@fortawesome/free-solid-svg-icons";
 import SearchDiv from "../../components/UserComponents/SearchDiv";
 import axios from "axios";
@@ -27,7 +30,7 @@ const Experience = () => {
       email: "elise@stellartech.com",
     },
   ];
-
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [experience, setExperiences] = useState([]);
 
   useEffect(() => {
@@ -51,12 +54,20 @@ const Experience = () => {
     history.goBack();
   };
 
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <>
       {experience && (
         <div className=" mx-auto pt-24 ">
           <div className="border border-hrColor ">
-            <div className="flex gap-10  items-center max-w-screen-xl m-auto pt-32 p-10 relative">
+            <div className="flex gap-10 flex-col lg:flex-row items-center max-w-screen-xl m-auto pt-32 p-10 relative">
               <Link
                 to={"/experiences"}
                 className=" absolute hover:scale-105 left-10 top-12 mr-4 text-4xl text-gray-500 hover:text-gray-700 focus:outline-none pb-12"
@@ -64,11 +75,11 @@ const Experience = () => {
                 <FontAwesomeIcon icon={faArrowLeftLong} />
               </Link>
               <div>
-                <SectionImage
+                <ExperienceImage
                   style={{ width: "340px", height: "250px" }}
                   imagePosition="right"
                   imageSrc={experience.coverImage}
-                  imageClass="rounded-xl object-cover"
+                  imageClass="rounded-xl object-cover visible"
                 />
               </div>
               <div className=" w-full">
@@ -81,10 +92,10 @@ const Experience = () => {
                   description={experience.description}
                 />
 
-                <div>
+                <div className="flex flex-col lg:flex-row">
                   <button
                     type="button"
-                    class="text-white bg-Black hover:Black focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-3 py-2.5 me-2 w-3/12 mb-2 "
+                    class="text-white bg-Black hover:Black focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-3 py-2.5 me-2 w-full lg:w-3/12 mb-2 "
                   >
                     + &nbsp;Create a Plan
                   </button>
@@ -96,24 +107,31 @@ const Experience = () => {
                     &nbsp;Request to join
                   </HomeButtons_Hollow>
                 </div>
-                <div className="absolute top-32 right-3 flex gap-4 align-middle">
+                <div className="relative lg:absolute lg:top-32 top-2 right-3 flex gap-4 flex-col lg:flex-row align-middle">
                   <Tag text="Reserved" iconClass="text-blue-500" />
                   <Tag text="Private" iconClass="text-blue-500" />
                   <Link
                     to={experience.accommodationUrl}
                     className="bg-gray-200 hover:font-bold bg-opacity-20 backdrop-filter backdrop-blur-lg rounded-md p-2 flex items-center"
                   >
-                    Accommodation URL <FontAwesomeIcon icon={faLink} />
+                    <FontAwesomeIcon icon={faLink} /> Accommodation URL
                   </Link>
+                  <button
+                    type="button"
+                    className="text-white bg-Black hover:Black focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-xl lg:text-sm py-2 lg:py-0 me-2 w-full lg:w-16 mb-2"
+                    onClick={openModal}
+                  >
+                    <FontAwesomeIcon icon={faEdit} className="mr-2" />
+                  </button>
                 </div>
               </div>
               <div></div>
             </div>
           </div>
 
-          <div className=" rounded-xl pt-5">
-            <div className="flex gap-10  items-center max-w-screen-xl m-auto">
-              <div className="border flex items-center justify-start rounded-xl border-hrColor p-6 w-full gap-5">
+          <div className="  rounded-xl pt-5">
+            <div className="flex  gap-10  items-center max-w-screen-xl m-auto">
+              <div className="border flex-col lg:flex-row flex items-center justify-start rounded-xl border-hrColor p-6 w-full gap-5">
                 <div className="border rounded-xl border-hrColor p-6 w-full">
                   <InfoFlexColumn
                     label="Rooms"
@@ -176,6 +194,18 @@ const Experience = () => {
               </div>
             </div>
           </div> */}
+          {isModalOpen && (
+            <div className="fixed  inset-0 flex justify-center items-center bg-black bg-opacity-50">
+              <div className="fixed right-0 top-0 h-full  p-4 lg:p-4 w-full lg:w-96 bg-white overflow-y-auto">
+                <div className="pt-16 rounded-lg shadow-lg">
+                  <ExperienceEditForm
+                    closeModal={closeModal}
+                    experience={experience}
+                  />
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       )}
     </>

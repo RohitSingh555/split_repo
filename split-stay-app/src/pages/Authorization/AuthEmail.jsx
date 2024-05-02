@@ -29,7 +29,7 @@ const AuthEmailPage = () => {
     console.log("verication code ===>", verificationCode);
     if (verificationCode === "Verification") {
       console.log("please inside");
-      navigate("/preferences");
+      navigate("/experiences");
     } else {
       alert("Enter the email ending with @harvard.edu || @stanford.edu");
     }

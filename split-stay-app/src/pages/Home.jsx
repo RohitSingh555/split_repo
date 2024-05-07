@@ -20,14 +20,14 @@ const Home = () => {
     <>
       <HeroSection />
       <div className=" md:p-28 p-3">
-        <div className="  md:p-12 p-5">
+        <div className="  md:p-12 p-5 ">
           <SectionContainer className="flex flex-col sm:flex-row gap-4 sm:gap-8">
             <SectionText
               title="Share a Stay, Split the Cost "
               description="Explore more for less by splitting your accommodation bill with someone that shares your lifestyle, interests, and travel preferences."
             >
               <HomeButtons_Solid
-                className="py-4 px-14"
+                className="py-4 px-14 mb-24 lg:mb-2"
                 onClick={() => console.log("Login clicked")}
               >
                 Share a Stay
@@ -42,19 +42,19 @@ const Home = () => {
         </div>
       </div>
 
-      <HTwoText text="How SplitStay Works" />
+      <HTwoText id="works" text="How SplitStay Works" />
 
       {/* New style div 1 */}
       <div className=" p-3 ">
-        <div className="  md:p-12 p-5">
-          <SectionContainer className="">
+        <div className="  md:p-12 p-5 max-w-screen-xl m-auto">
+          <SectionContainer className=" ">
             <div className="flex flex-col">
               <SectionText
                 title="Propose an experience"
                 description="Wow this project is so awesome! Let me tell you why right here, right now."
                 className=" max-w-sm"
               ></SectionText>
-              <div className="flex gap-5 justify-between">
+              <div className="flex flex-col lg:flex-row gap-5 justify-between">
                 <div className=" max-w-xl">
                   <SectionImage
                     imagePosition="right"
@@ -72,7 +72,7 @@ const Home = () => {
 
       {/* New style div 2 */}
       <div className=" p-3 ">
-        <div className="  md:p-12 p-5">
+        <div className="  md:p-12 p-5 max-w-screen-xl m-auto">
           <SectionContainer className="">
             <div className="flex flex-col">
               <SectionText
@@ -80,12 +80,12 @@ const Home = () => {
                 description="Wow this project is so awesome! Let me tell you why right here, right now."
                 className=" max-w-sm"
               ></SectionText>
-              <div className="flex gap-5 justify-between">
+              <div className="flex flex-col lg:flex-row gap-5 justify-between">
                 <div className=" max-w-xl">
                   <SectionImage
                     imagePosition="right"
                     imageClass=" rounded-xl"
-                    imageSrc="/group2.png" // Replace with your image URL
+                    imageSrc="/group2.png"
                   />
                   {/* <HomeButtons_Solid className="py-4 px-14" onClick={() => console.log('Login clicked')}>Sign up now</HomeButtons_Solid> */}
                 </div>
@@ -96,10 +96,13 @@ const Home = () => {
         </div>
       </div>
 
-      <HTwoText text="A travel companion platform with features focused on safety" />
+      <HTwoText
+        id="features"
+        text="A travel companion platform with features focused on safety"
+      />
 
-      <div className="Section2 md:p-20 p-3">
-        <SectionContainer className="flex gap-10 md:gap-36 sectionContainer2 flex-row-reverse">
+      <div id="features" className="Section2 md:p-20 p-3 max-w-7xl m-auto">
+        <SectionContainer className="flex flex-col lg:flex-row gap-10 md:gap-36 sectionContainer2 flex-row-reverse">
           <SectionImage
             imagePosition="right"
             imageClass="min-h-96 min-w-96"
@@ -115,8 +118,8 @@ const Home = () => {
         </SectionContainer>
       </div>
 
-      <div className="Section3 md:p-20 p-3">
-        <SectionContainer className="flex gap-10 md:gap-36 sectionContainer3 ">
+      <div className="Section3 md:p-20 p-3 max-w-7xl m-auto">
+        <SectionContainer className="flex flex-col lg:flex-row gap-10 md:gap-36 sectionContainer3 ">
           <SectionText2
             // subtitle="Trust & safety"
             title="Search and filter through experiences and travelers"
@@ -126,14 +129,14 @@ const Home = () => {
           </SectionText2>
           <SectionImage
             imagePosition="right"
-            imageClass="min-h-96 min-w-96"
+            imageClass="min-h-96 min-w-96 "
             imageSrc="/surf.png" // Replace with your image URL
           />
         </SectionContainer>
       </div>
 
-      <div className="Section3 md:p-20 p-3 ">
-        <SectionContainer className="flex gap-10 md:gap-36 sectionContainer3 ">
+      <div className="Section3 md:p-20 p-3 max-w-7xl m-auto">
+        <SectionContainer className="flex flex-col lg:flex-row gap-10 md:gap-36 sectionContainer3 ">
           <SectionText2
             // subtitle="Trust & safety"
             title="Easily and securely send payments"
@@ -143,7 +146,7 @@ const Home = () => {
           </SectionText2>
           <SectionImage
             imagePosition="right"
-            imageClass="min-h-96 min-w-96"
+            imageClass="min-h-96 min-w-96 flex"
             imageSrc="/pool.png" // Replace with your image URL
           />
         </SectionContainer>
@@ -156,13 +159,13 @@ const Home = () => {
 
       <NewsletterSection />
 
-      <HTwoText text="A few answers to common questions" />
+      <HTwoText id="faq" text="A few answers to common questions" />
 
-      <SectionContainer className="flex align-middle items-center justify-center gap-10 md:gap-36 sectionContainer3 ">
+      <SectionContainer className="flex flex-col-reverse lg:flex-row align-middle items-center justify-center gap-10 md:gap-36 sectionContainer3 ">
         <FAQAccordion />
         <SectionImage
           imagePosition="right"
-          imageClass="min-h-96 min-w-96"
+          imageClass="min-h-96 pl-4 min-w-96"
           imageSrc="/lane.png" // Replace with your image URL
         />
       </SectionContainer>

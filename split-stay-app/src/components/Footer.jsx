@@ -12,13 +12,13 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="px-4 pt-12 pb-6 ">
+    <footer className="px-4 pt-12 pb-6 container m-auto px-4">
       <hr className="border-1 border-gray-300 opacity-30"></hr>
       <div className="container flex flex-col lg:flex-row justify-between py-12 mx-auto space-y-12 lg:space-y-0">
         <div className="lg:w-64">
           <Link rel="noopener noreferrer" href="#" className="flex  pb-5">
             {/* <img src="/SplitStay.png" className="h-10" alt="SplitStay Logo" /> */}
-            <h2 className=" font-bold text-2xl lg:text-4xl">SplitStay</h2>
+            <h2 className=" font-medium text-2xl lg:text-4xl">SplitStay</h2>
           </Link>
           <p className="max-w-sm text-gray-500 lg:max-w-none">
             Wow this project is so awesome! Let me tell you why right here,
@@ -132,19 +132,19 @@ const Footer = () => {
               <label htmlFor="UserEmail" className="sr-only">
                 Email
               </label>
-              <div className="flex flex-col sm:flex-row">
+              <div className="flex flex-col gap-2 sm:flex-row">
                 <input
                   type="email"
                   id="UserEmail"
                   placeholder="Get notified of updates"
-                  className="w-full sm:w-3/4 rounded-md p-2 sm:text-sm"
+                  className="w-full sm:w-3/4 border-LabelEXP border rounded-md p-2 sm:text-sm"
                 />
-                <HomeButtons_Solid
-                  className="py-1 sm:py-0 sm:w-2/4"
-                  onClick={() => console.log("Login clicked")}
+                <button
+                  type="submit"
+                  className="w-full py-1 sm:py-0 sm:w-2/4  px-4 border font-medium border-Overlay rounded-md shadow-sm bg-Overlay hover:bg-LabelEXP focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                 >
                   Subscribe
-                </HomeButtons_Solid>
+                </button>
               </div>
             </form>
             {/* <p className="mt-4 max-w-xs text-xs text-gray-300 lg:max-w-none">

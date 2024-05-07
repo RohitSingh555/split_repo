@@ -55,25 +55,21 @@ const Navbar = () => {
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
             {/* <img src="/SplitStay.png" className="h-10" alt="SplitStay Logo" /> */}
-            <h2 className=" font-bold text-2xl lg:text-4xl">
-              SplitStay
-            </h2>
+            <h2 className=" font-medium text-2xl lg:text-4xl">SplitStay</h2>
           </Link>
         ) : (
           <Link
             to="/home"
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
-             {/* <img src="/SplitStay.png" className="h-10" alt="SplitStay Logo" /> */}
-             <h2 className=" font-bold text-2xl lg:text-4xl">
-              SplitStay
-            </h2>
+            {/* <img src="/SplitStay.png" className="h-10" alt="SplitStay Logo" /> */}
+            <h2 className=" font-medium text-2xl lg:text-4xl">SplitStay</h2>
           </Link>
         )}
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           {shouldDisplay && !isAuthenticated ? (
             <div className="md:flex gap-5 hidden">
-              <Link to={"/login"} onClick={closeNavbar}>
+              {/* <Link to={"/login"} onClick={closeNavbar}>
                 <HomeButtons_Hollow
                   className="py-3 px-10"
                   onClick={() => console.log("Signup clicked")}
@@ -88,7 +84,7 @@ const Navbar = () => {
                 >
                   Signup
                 </HomeButtons_Solid>
-              </Link>
+              </Link> */}
             </div>
           ) : (
             <div className="md:flex items-center gap-5 hidden">
@@ -152,42 +148,42 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/about"
-                  className="block py-2 px-3 text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 "
+                <a
+                  href="#works"
+                  className="block py-2 px-3 text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 cursor-pointer md:p-0 "
                   onClick={closeNavbar}
                 >
                   How it Works
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
-                  to="/pricing"
+                <a
+                  href="#features"
                   className="block py-2 px-3 text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 "
                   onClick={closeNavbar}
                 >
                   Features
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
-                  to="#"
+                <a
+                  href="#faq"
                   className="block py-2 px-3 text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 "
                   onClick={closeNavbar}
                 >
                   FAQ
-                </Link>
+                </a>
               </li>
               {isNavbarOpen ? (
                 <div className="flex gap-5">
-                  <Link to={"/login"} onClick={closeNavbar}>
+                  {/* <Link to={"/login"} onClick={closeNavbar}>
                     <HomeButtons_Solid
                       className="border-0 ml-2"
                       onClick={() => console.log("Signup clicked")}
                     >
                       Login
                     </HomeButtons_Solid>
-                  </Link>
+                  </Link> */}
                   {/* <Link to={"/signup"}>
                     <HomeButtons_Solid
                       className="py-3 px-10"

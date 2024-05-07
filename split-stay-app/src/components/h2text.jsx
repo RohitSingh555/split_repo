@@ -1,8 +1,11 @@
-import React from 'react';
+import React from "react";
 
-const HTwoText = ({ text }) => {
+const HTwoText = ({ text, id }) => {
   return (
-    <div className="m-auto max-w-xl text-gray-900 text-5xl font-semibold leading-tight text-center">
+    <div
+      id={id}
+      className="m-auto max-w-xl text-gray-900 text-3xl lg:text-5xl font-semibold leading-tight text-center"
+    >
       {text}
     </div>
   );

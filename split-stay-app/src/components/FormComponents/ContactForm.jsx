@@ -11,53 +11,53 @@ const ContactForm = () => {
       </h4>
       <form className="pt-12">
         <div className="mb-8">
-          <label
+          {/* <label
             htmlFor="name"
             className="block text-xl font-medium text-gray-700"
           >
             Name
-          </label>
+          </label> */}
           <input
             type="text"
             id="name"
             name="name"
-            className="mt-1 p-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-            placeholder="Enter your name"
+            className="mt-1 p-2 w-full border border-LabelEXP rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+            placeholder="Name"
           />
         </div>
         <div className="mb-8">
-          <label
+          {/* <label
             htmlFor="email"
             className="block text-xl font-medium text-gray-700"
           >
             Email
-          </label>
+          </label> */}
           <input
             type="email"
             id="email"
             name="email"
-            className="mt-1 p-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-            placeholder="Enter your email"
+            className="mt-1 p-2 w-full border border-LabelEXP rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+            placeholder="Email"
           />
         </div>
         <div className="mb-8">
-          <label
+          {/* <label
             htmlFor="message"
             className="block text-xl font-medium text-gray-700"
           >
             Message
-          </label>
+          </label> */}
           <textarea
             id="message"
             name="message"
             rows="4"
-            className="mt-1 p-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-            placeholder="Enter your message"
+            className="mt-1 p-2 w-full border border-LabelEXP rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+            placeholder="Message"
           ></textarea>
         </div>
         <button
           type="submit"
-          className="w-full py-2 px-4 border font-medium border-transparent rounded-md shadow-sm bg-Overlay hover:bg-LabelEXP focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          className="w-full py-2 px-4 border font-medium border-Overlay rounded-md shadow-sm bg-Overlay hover:bg-LabelEXP focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
         >
           Send Message
         </button>

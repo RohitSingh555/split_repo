@@ -29,7 +29,7 @@ const TextSlider = () => {
           fontSize: "30px",
         }}
       />
-      <div className="text-2xl lg:text-5xl font-medium leading-none text-center text-gray-800 font-poppins w-3/6">
+      <div className="text-2xl lg:text-5xl font-medium leading-none text-center text-gray-800 font-poppins w-3/6 min-h-36">
         <h2 className="w-full">{slides[currentSlide]}</h2>
       </div>
       <FontAwesomeIcon

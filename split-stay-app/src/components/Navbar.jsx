@@ -54,14 +54,20 @@ const Navbar = () => {
             to="/"
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
-            <img src="/SplitStay.png" className="h-10" alt="SplitStay Logo" />
+            {/* <img src="/SplitStay.png" className="h-10" alt="SplitStay Logo" /> */}
+            <h2 className=" font-bold text-2xl lg:text-4xl">
+              SplitStay
+            </h2>
           </Link>
         ) : (
           <Link
             to="/home"
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
-            <img src="/SplitStay.png" className="h-10" alt="SplitStay Logo" />
+             {/* <img src="/SplitStay.png" className="h-10" alt="SplitStay Logo" /> */}
+             <h2 className=" font-bold text-2xl lg:text-4xl">
+              SplitStay
+            </h2>
           </Link>
         )}
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
@@ -151,7 +157,7 @@ const Navbar = () => {
                   className="block py-2 px-3 text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 "
                   onClick={closeNavbar}
                 >
-                  About Us
+                  How it Works
                 </Link>
               </li>
               <li>
@@ -160,7 +166,7 @@ const Navbar = () => {
                   className="block py-2 px-3 text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 "
                   onClick={closeNavbar}
                 >
-                  Pricing
+                  Features
                 </Link>
               </li>
               <li>
@@ -169,7 +175,7 @@ const Navbar = () => {
                   className="block py-2 px-3 text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 "
                   onClick={closeNavbar}
                 >
-                  Contact
+                  FAQ
                 </Link>
               </li>
               {isNavbarOpen ? (

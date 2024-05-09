@@ -29,66 +29,66 @@ const router = createBrowserRouter([
         element: <Home />,
         errorElement: <ErrorPage />,
       },
-      {
-        path: "home",
-        element: <MainPage />,
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: "about",
-        element: <AboutUs />,
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: "pricing",
-        element: <Pricing />,
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: "login",
-        element: <LoginPage />,
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: "preferences",
-        element: <PreferencePage />,
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: "onboarding-preferences",
-        element: <OnboardingPreferencePage />,
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: "onboarding-questions",
-        element: <OnboardingQuestions />,
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: "signup",
-        element: <SignupPage />,
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: "experience/:id",
-        element: <Experience />,
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: "experiences",
-        element: <UserExperiencePage />,
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: "experiencesform",
-        element: <ExperienceForm />,
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: "authemail",
-        element: <AuthEmailPage />,
-        errorElement: <ErrorPage />,
-      },
+      // {
+      //   path: "home",
+      //   element: <MainPage />,
+      //   errorElement: <ErrorPage />,
+      // },
+      // {
+      //   path: "about",
+      //   element: <AboutUs />,
+      //   errorElement: <ErrorPage />,
+      // },
+      // {
+      //   path: "pricing",
+      //   element: <Pricing />,
+      //   errorElement: <ErrorPage />,
+      // },
+      // {
+      //   path: "login",
+      //   element: <LoginPage />,
+      //   errorElement: <ErrorPage />,
+      // },
+      // {
+      //   path: "preferences",
+      //   element: <PreferencePage />,
+      //   errorElement: <ErrorPage />,
+      // },
+      // {
+      //   path: "onboarding-preferences",
+      //   element: <OnboardingPreferencePage />,
+      //   errorElement: <ErrorPage />,
+      // },
+      // {
+      //   path: "onboarding-questions",
+      //   element: <OnboardingQuestions />,
+      //   errorElement: <ErrorPage />,
+      // },
+      // {
+      //   path: "signup",
+      //   element: <SignupPage />,
+      //   errorElement: <ErrorPage />,
+      // },
+      // {
+      //   path: "experience/:id",
+      //   element: <Experience />,
+      //   errorElement: <ErrorPage />,
+      // },
+      // {
+      //   path: "experiences",
+      //   element: <UserExperiencePage />,
+      //   errorElement: <ErrorPage />,
+      // },
+      // {
+      //   path: "experiencesform",
+      //   element: <ExperienceForm />,
+      //   errorElement: <ErrorPage />,
+      // },
+      // {
+      //   path: "authemail",
+      //   element: <AuthEmailPage />,
+      //   errorElement: <ErrorPage />,
+      // },
     ],
   },
 ]);

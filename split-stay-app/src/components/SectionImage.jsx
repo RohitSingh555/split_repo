@@ -9,12 +9,12 @@ const SectionImage = ({
 }) => {
   return (
     <div
-      className={` lg:mt-0 lg:col-span-7 lg:flex ${className} ${
+      className={` lg:mt-0 lg:col-span-12 lg:flex ${className} ${
         imagePosition === "left" ? "order-2" : ""
       }`}
     >
       <img
-        className={`pr-4 ${imageClass}`}
+        className={` ${imageClass}`}
         style={style}
         src={imageSrc}
         alt="mockup"

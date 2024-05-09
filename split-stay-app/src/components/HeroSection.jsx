@@ -5,13 +5,13 @@ import PentagonImage from "./PentagonImage";
 const HeroSection = () => {
   return (
     <section className=" pb-2 bg-HeroSectionBackgroundColor pt-7 md:pt-24">
-      <div className="grid max-w-screen-xl px-4 py-8 mx-auto xl:gap-0 lg:py-16 ">
-        <div className="relative w-full h-48 md:h-auto ">
+      <div className="grid max-w-screen-xl px-4 py-1 mx-auto xl:gap-0 lg:py-4 ">
+        <div className="relative w-full pt-14 lg:pt-0 md:h-auto ">
           <div className="hidden xl:flex pt-24 xl:pt-4">
             {/* Top Left */}
             <PentagonImage
               image="/Image-1.png"
-              style={{ position: "absolute", top: "10px", left: "10px" }}
+              style={{ position: "absolute", top: "10px", left: "90px" }}
             />
 
             {/* Top Right */}

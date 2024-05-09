@@ -19,7 +19,7 @@ const TextSlider = () => {
   };
 
   return (
-    <div className="flex justify-center items-center p-12 py-24 lg:py-48">
+    <div className="flex justify-center items-center p-4 lg:p-8 py-2 lg:py-22">
       <FontAwesomeIcon
         icon={faArrowLeft}
         onClick={prevSlide}
@@ -29,8 +29,10 @@ const TextSlider = () => {
           fontSize: "30px",
         }}
       />
-      <div className="text-2xl lg:text-5xl font-medium leading-none text-center text-gray-800 font-poppins w-3/6 min-h-36">
-        <h2 className="w-full">{slides[currentSlide]}</h2>
+      <div className="text-xl lg:text-4xl font-medium leading-none text-center text-gray-800 font-poppins w-3/6 ">
+        <h2 className="w-full flex items-center min-h-36 lg:min-h-36">
+          {slides[currentSlide]}
+        </h2>
       </div>
       <FontAwesomeIcon
         icon={faArrowRight}

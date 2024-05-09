@@ -55,7 +55,7 @@ const FAQAccordion = () => {
             />
             <label
               htmlFor={`faq-${faq.id}`}
-              className="block cursor-pointer p-4 border-b-2 text-xl border-gray-400 rounded-lg bg-white duration-100"
+              className="flex items-center justify-between gap-2 cursor-pointer p-4 border-b-2 text-xl border-gray-400 rounded-lg bg-white duration-100 "
             >
               {faq.question}
               <svg

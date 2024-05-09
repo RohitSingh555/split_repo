@@ -59,7 +59,7 @@ const Navbar = () => {
           </Link>
         ) : (
           <Link
-            to="/home"
+            to="/"
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
             {/* <img src="/SplitStay.png" className="h-10" alt="SplitStay Logo" /> */}

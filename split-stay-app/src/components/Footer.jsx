@@ -132,7 +132,7 @@ const Footer = () => {
               <label htmlFor="UserEmail" className="sr-only">
                 Email
               </label>
-              <div className="flex flex-col gap-2 sm:flex-row">
+              <div className="flex flex-col max-w-96 lg:w-full gap-2 sm:flex-row">
                 <input
                   type="email"
                   id="UserEmail"

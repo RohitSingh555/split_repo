@@ -9,7 +9,7 @@ const SectionText = ({ subtitle, title, description, children, className }) => {
       {subtitle && (
         <p className="text-2xl text-gray-600 mb-2 uppercase">{subtitle}</p>
       )}
-      <h2 className="max-w-5xl mb-4 text-2xl font-medium w-50 leading-none md:text-4xl   w-100">
+      <h2 className="max-w-5xl mb-4 text-2xl font-medium w-50 leading-none lg:text-3xl   w-100">
         {title}
       </h2>
       <p className="max-w-5xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-lg ">

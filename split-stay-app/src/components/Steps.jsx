@@ -3,7 +3,7 @@ import React from "react";
 
 const Steps = () => {
   return (
-    <div className="steps max-w-4xl lg:mx-auto pt-10 lg:pt-0">
+    <div className="steps max-w-4xl lg:mx-auto pt-10 px-4 lg:pt-0">
       <div className="step">
         <h2 className="text-2xl pb-5 font-medium mb-2">Step 1</h2>
         <p className="text-gray-600 pb-8 max-w-96">

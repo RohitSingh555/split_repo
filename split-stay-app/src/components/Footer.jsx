@@ -155,7 +155,7 @@ const Footer = () => {
       </div>
       <hr className="h-px my-8 bg-gray-200 border-2  opacity-10"></hr>
       <div className="py-6 text-sm text-center  md:pb-4">
-        Copyright @ SplitStay 2023. All Rights Reserved.
+        Copyright @ SplitStay 2024. All Rights Reserved.
       </div>
     </footer>
   );

@@ -21,7 +21,7 @@ const Home = () => {
       <HeroSection />
       <div className=" lg:p-28 p-3 pb-12">
         <div className="  md:p-12  ">
-          <SectionContainer className="flex flex-col-reverse sm:flex-row gap-20 lg:gap-8">
+          <SectionContainer className="flex flex-col-reverse sm:flex-row gap-10 lg:gap-8">
             <SectionText
               title="Share a Stay, Split the Cost "
               className=" lg:w-3/5"

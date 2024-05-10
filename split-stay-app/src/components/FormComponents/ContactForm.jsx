@@ -7,6 +7,7 @@ const ContactForm = () => {
     name: "",
     email: "",
     message: "",
+    date: new Date().getTime(),
   });
 
   // Handle input changes
@@ -30,14 +31,16 @@ const ContactForm = () => {
         }
       );
       if (response.ok) {
-        alert("Thank you for your message. We will get back to you soon.");
+        console.log(
+          "Thank you for your message. We will get back to you soon."
+        );
         setFormData({ name: "", email: "", message: "" });
       } else {
         throw new Error("Something went wrong");
       }
     } catch (error) {
       console.error("Error:", error);
-      alert("Failed to send message. Please try again.");
+      console.log("Failed to send message. Please try again.");
     }
   };
 

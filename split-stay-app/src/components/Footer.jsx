@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import {
 //   faFacebook,
@@ -11,6 +11,34 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const [email, setEmail] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const payload = {
+      email: email,
+      date: new Date().getTime(),
+    };
+
+    try {
+      const response = await fetch(
+        "https://hooks.zapier.com/hooks/catch/18820054/3jzqjq7/",
+        {
+          method: "POST",
+          body: JSON.stringify(payload),
+        }
+      );
+
+      if (response.ok) {
+        console.log("Subscription successful!");
+      } else {
+        console.error("Failed to subscribe:", response.statusText);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
   return (
     <footer className=" pt-12 pb-6 container m-auto px-4">
       <hr className="border-1 border-gray-300 opacity-30"></hr>
@@ -128,7 +156,7 @@ const Footer = () => {
                 </Link>
               </li>
             </ul>
-            <form className="mt-6">
+            <form className="mt-6" onSubmit={handleSubmit}>
               <label htmlFor="UserEmail" className="sr-only">
                 Email
               </label>
@@ -138,6 +166,9 @@ const Footer = () => {
                   id="UserEmail"
                   placeholder="Get notified of updates"
                   className="w-full sm:w-3/4 border-LabelEXP border rounded-md p-2 sm:text-sm"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
                 />
                 <button
                   type="submit"

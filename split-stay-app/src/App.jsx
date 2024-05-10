@@ -7,7 +7,7 @@ import Footer from "./components/Footer";
 const App = () => {
   return (
     <>
-      <Navbar />
+      <Navbar id="top"/>
       <Outlet />
       <Footer />
       {/*       <Navbar />

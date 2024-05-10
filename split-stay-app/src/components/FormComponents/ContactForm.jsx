@@ -35,6 +35,7 @@ const ContactForm = () => {
           "Thank you for your message. We will get back to you soon."
         );
         setFormData({ name: "", email: "", message: "" });
+        alert('Thank you for your message. We will get back to you soon.')
       } else {
         throw new Error("Something went wrong");
       }

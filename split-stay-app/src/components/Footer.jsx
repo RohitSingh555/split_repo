@@ -32,6 +32,8 @@ const Footer = () => {
 
       if (response.ok) {
         console.log("Subscription successful!");
+        setEmail("")
+        alert("Newsletter subscribed. Thanks")
       } else {
         console.error("Failed to subscribe:", response.statusText);
       }
@@ -102,24 +104,24 @@ const Footer = () => {
             </h3> */}
             <ul className="space-y-3">
               <li>
-                <Link rel="noopener noreferrer" href="#">
+                <a rel="noopener noreferrer" href="#top">
                   Home
-                </Link>
+                </a>
               </li>
               <li>
-                <Link rel="noopener noreferrer" href="#">
+                <a rel="noopener noreferrer" href="#works">
                   How it Works
-                </Link>
+                </a>
               </li>
               <li>
-                <Link rel="noopener noreferrer" href="#">
+                <a rel="noopener noreferrer" href="#features">
                   Features
-                </Link>
+                </a>
               </li>
               <li>
-                <Link rel="noopener noreferrer" href="#">
+                <a rel="noopener noreferrer" href="#faq">
                   FAQ
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -127,19 +129,19 @@ const Footer = () => {
             {/* <h3 className="tracking-wide uppercase font-bold text-lg">Terms</h3> */}
             <ul className="space-y-3">
               <li>
-                <Link rel="noopener noreferrer" href="#">
+                <a rel="noreferrer" href="https://www.facebook.com/">
                   Facebook
-                </Link>
+                </a>
               </li>
               <li>
-                <Link rel="noopener noreferrer" href="#">
+                <a rel="noreferrer" href="https://www.instagram.com/">
                   Instagram
-                </Link>
+                </a>
               </li>
               <li>
-                <Link rel="noopener noreferrer" href="#">
+                <a rel="noreferrer" href="https://www.linkedin.com/">
                   LinkedIn
-                </Link>
+                </a>
               </li>
             </ul>
           </div>

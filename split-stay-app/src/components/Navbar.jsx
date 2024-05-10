@@ -47,7 +47,7 @@ const Navbar = () => {
   }, []); // Run only once on component mount
 
   return (
-    <nav className="bg-white fixed w-full z-20 top-0 start-0 py-3 ">
+    <nav className="bg-white fixed w-full z-20 top-0 start-0 py-3 " >
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         {shouldDisplay && isAuthenticated ? (
           <Link

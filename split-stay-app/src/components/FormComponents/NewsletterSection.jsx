@@ -22,6 +22,8 @@ const NewsletterSection = () => {
 
       if (response.ok) {
         console.log("Join Waitlist successful!");
+        setEmail("")
+        alert('Thanks for subscribing. ')
       } else {
         console.error("Failed to join waitlist:", response.statusText);
       }

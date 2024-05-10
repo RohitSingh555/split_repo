@@ -13,7 +13,7 @@ const NewsletterSection = () => {
 
     try {
       const response = await fetch(
-        "https://hooks.zapier.com/hooks/catch/18820054/3jzq7c3/",
+        "https://hooks.zapier.com/hooks/catch/18820054/3jzqjq7/",
         {
           method: "POST",
           body: JSON.stringify(payload),

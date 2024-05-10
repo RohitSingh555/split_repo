@@ -7,6 +7,10 @@ body {
     font-family: poppins;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .grow li svg {
     background-color: #005d93;
     padding: 4px;

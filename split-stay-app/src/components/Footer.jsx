@@ -1,20 +1,20 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFacebook,
-  faTwitter,
-  faInstagram,
-  faFacebookMessenger,
-} from "@fortawesome/free-brands-svg-icons";
-import { HomeButtons_Solid } from "./HomeButtons";
-import { faInfinity } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import {
+//   faFacebook,
+//   faTwitter,
+//   faInstagram,
+//   faFacebookMessenger,
+// } from "@fortawesome/free-brands-svg-icons";
+// import { HomeButtons_Solid } from "./HomeButtons";
+// import { faInfinity } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="px-4 pt-12 pb-6 container m-auto px-4">
+    <footer className=" pt-12 pb-6 container m-auto px-4">
       <hr className="border-1 border-gray-300 opacity-30"></hr>
-      <div className="container flex flex-col lg:flex-row justify-between py-12 mx-auto space-y-12 lg:space-y-0">
+      <div className="max-w-7xl flex flex-col lg:flex-row justify-between py-12 mx-auto space-y-12 lg:space-y-0">
         <div className="lg:w-64">
           <Link rel="noopener noreferrer" href="#" className="flex  pb-5">
             {/* <img src="/SplitStay.png" className="h-10" alt="SplitStay Logo" /> */}

@@ -21,7 +21,7 @@ const Home = () => {
       <HeroSection />
       <div className=" lg:p-28 p-3 pb-12">
         <div className="  md:p-12  ">
-          <SectionContainer className="flex flex-col sm:flex-row gap-4 sm:gap-8">
+          <SectionContainer className="flex flex-col-reverse sm:flex-row gap-20 lg:gap-8">
             <SectionText
               title="Share a Stay, Split the Cost "
               className=" lg:w-3/5"
@@ -72,7 +72,7 @@ const Home = () => {
       </div>
 
       {/* New style div 2 */}
-      <div className=" p-3 ">
+      <div className=" p-3 pb-10">
         <div className="  md:px-12  max-w-screen-xl m-auto">
           <SectionContainer className="">
             <div className="flex flex-col">
@@ -102,8 +102,8 @@ const Home = () => {
         text="A travel companion platform with features focused on safety"
       />
 
-      <div id="features" className="Section2 md:p-20 p-3 max-w-7xl m-auto">
-        <SectionContainer className="flex flex-col lg:flex-row gap-10 lg:gap-36 sectionContainer2 ">
+      <div id="features" className="Section2 md:px-20 px-3 max-w-7xl m-auto">
+        <SectionContainer className="flex flex-col-reverse lg:flex-row gap-10 lg:gap-36 sectionContainer2 ">
           <SectionText2
             // subtitle="Matching made easy"
             title="Your safety top of mind with multiple verifications"
@@ -120,8 +120,8 @@ const Home = () => {
         </SectionContainer>
       </div>
 
-      <div className="Section3 md:p-20 p-3 max-w-7xl m-auto">
-        <SectionContainer className="flex flex-col lg:flex-row gap-10 lg:gap-36 sectionContainer3 ">
+      <div className="Section3 md:px-20 px-3 max-w-7xl m-auto">
+        <SectionContainer className="flex flex-col-reverse lg:flex-row gap-10 lg:gap-36 sectionContainer3 ">
           <SectionText2
             // subtitle="Trust & safety"
             title="Search and filter through experiences and travelers"
@@ -138,8 +138,8 @@ const Home = () => {
         </SectionContainer>
       </div>
 
-      <div className="Section3 md:p-20 p-3 max-w-7xl m-auto pb-10 lg:pb-20">
-        <SectionContainer className="flex flex-col lg:flex-row gap-10 lg:gap-36 sectionContainer3 ">
+      <div className="Section3 md:px-20 px-3 max-w-7xl m-auto pb-10 lg:pb-20">
+        <SectionContainer className="flex flex-col-reverse lg:flex-row gap-10 lg:gap-36 sectionContainer3 ">
           <SectionText2
             // subtitle="Trust & safety"
             title="Easily and securely send payments"

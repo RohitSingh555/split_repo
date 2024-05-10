@@ -1,56 +1,83 @@
-import React from "react";
+import React, { useState } from "react";
 import HTwoText from "../h2text";
 
 const ContactForm = () => {
+  // State to store input values
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  // Handle input changes
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      const response = await fetch(
+        "https://hooks.zapier.com/hooks/catch/18820054/3jzm9n5/",
+        {
+          method: "POST",
+          body: JSON.stringify(formData),
+        }
+      );
+      if (response.ok) {
+        alert("Thank you for your message. We will get back to you soon.");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        throw new Error("Something went wrong");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Failed to send message. Please try again.");
+    }
+  };
+
   return (
     <div className="max-w-3xl mx-auto bg-white p-8 pt-20 pb-20 rounded-md">
       <HTwoText text="Contact Us" />
-      <h4 className="text-lg pt-12 text-gray-600 mb-6 m-auto text-center">
+      <h4 className="text-lg pt-6 text-gray-600 m-auto text-center">
         Please reach out if you have any questions. We are actively having
         conversations with partners, influencers, collaborators, and investors.
       </h4>
-      <form className="pt-12">
+      <form className="pt-12" onSubmit={handleSubmit}>
         <div className="mb-8">
-          {/* <label
-            htmlFor="name"
-            className="block text-xl font-medium text-gray-700"
-          >
-            Name
-          </label> */}
           <input
             type="text"
             id="name"
             name="name"
+            value={formData.name}
+            onChange={handleChange}
             className="mt-1 p-2 w-full border border-LabelEXP rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
             placeholder="Name"
           />
         </div>
         <div className="mb-8">
-          {/* <label
-            htmlFor="email"
-            className="block text-xl font-medium text-gray-700"
-          >
-            Email
-          </label> */}
           <input
             type="email"
             id="email"
             name="email"
+            value={formData.email}
+            onChange={handleChange}
             className="mt-1 p-2 w-full border border-LabelEXP rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
             placeholder="Email"
           />
         </div>
         <div className="mb-8">
-          {/* <label
-            htmlFor="message"
-            className="block text-xl font-medium text-gray-700"
-          >
-            Message
-          </label> */}
           <textarea
             id="message"
             name="message"
             rows="4"
+            value={formData.message}
+            onChange={handleChange}
             className="mt-1 p-2 w-full border border-LabelEXP rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
             placeholder="Message"
           ></textarea>
